@@ -44,3 +44,32 @@ object
 // 7.
 
 /* No, it will return undefined because the value at that index is undefined. */
+
+// 8.
+
+/* let names = ['asta', 'butterscotch', 'pudding', 'neptune', 'darwin']; */
+
+// 9.
+
+/*let pets = {
+  asta : 'dog',
+  butterscotch : 'cat',
+  pudding : 'cat',
+  neptune : 'fish',
+  darwin : 'lizard',
+};
+
+*/
+
+// 10.
+
+/* false, because one has a capital F, and the other does not. */
+
+// 11. 
+
+/* 3 */
+
+// 12.
+
+/* true, false when comparing strings, js goes character-by-character left-to-right, and 1 < 9 . */
+
