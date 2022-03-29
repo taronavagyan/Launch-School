@@ -82,6 +82,7 @@ console.log(capitalizeMoreThanTen('Asassination'));
 
 // 8.
 
+/*
 function numberRange(number) {
   if (number >= 0 && number <= 50) 
     console.log(`${number} is between 0 and 50`);
@@ -94,4 +95,5 @@ function numberRange(number) {
 }
 
 numberRange(2);
+*/
 
