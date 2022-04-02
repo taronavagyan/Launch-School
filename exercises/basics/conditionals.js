@@ -35,7 +35,7 @@ console.log(randomNumber ? 'Yes!' : 'No.');
 /*
 let weather = "dog";
 
-if (weather === "sunny") 
+if (weather === "sunny")  
   console.log("It's a beautiful day!");
 else if (weather === "rainy")
   console.log("Grab your umbrella.");
