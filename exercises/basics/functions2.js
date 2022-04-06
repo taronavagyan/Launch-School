@@ -73,3 +73,44 @@ catAge(2); // 24
 catAge(3); // 28
 catAge(4); // 32
 */
+
+// 6.
+
+/*
+function removeLastChar(string) {
+  return string.substring(0,string.length-1);
+}
+
+console.log(removeLastChar('cioa!'));
+console.log(removeLastChar('helloo'));
+*/
+
+// 7.
+
+/*
+const template = 'I VERB NOUN.';
+let sentence = (verb, noun) => 
+  template
+  .replace('VERB', verb)
+  .replace('NOUN', noun);
+
+
+console.log(sentence('like', 'birds'));
+// logs: I like birds.
+*/
+
+// 8.
+
+/*
+let initGame = () => (
+  {
+    level: 1,
+    score: 0
+  });
+
+
+let game = initGame();
+
+console.log('Level: ' + game.level);
+console.log('Score: ' + game.score);
+*/
