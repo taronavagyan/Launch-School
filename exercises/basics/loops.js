@@ -98,4 +98,4 @@ for (let name of fish) {
 // 10.
 
 /* The while loop never runs because 0 is not greater than 0. The do...while loop always runs at least once, so it runs the
-once loop and then evaluates (counter > 0) as false and stops.
+once loop and then evaluates (counter > 0) as false and stops. */
