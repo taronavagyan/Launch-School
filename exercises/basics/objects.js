@@ -90,3 +90,81 @@ for (let prop in obj) {
 
 "It's true" never runs because the "true" property is a String, not a Boolean.
 */
+
+// 7.
+
+/*
+let vehicle = {
+  manufacturer: 'Tesla',
+  model: 'Model X',
+  year: 2015,
+  range: 295,
+  seats: 7
+};
+
+let carKeys = Object.keys(vehicle);
+*/
+
+// 8.
+
+/*
+let person = {
+  title: 'Duke',
+  name: 'Nukem',
+  age: 33
+};
+
+let nestedPerson = Object.entries(person);
+*/
+
+// 9.
+
+/*
+let nestedArray = [['title', 'Duke'], ['name', 'Nukem'], ['age', 33]];
+
+let person = {};
+
+for (let personInfo of nestedArray) {
+  person[personInfo[0]] = personInfo[1];
+}
+
+BETTER SOLUTION:
+let person = Object.fromEntries(nestedArray);
+*/
+
+// 10.
+
+/*
+function clone(obj) {
+  let objCopy = {};
+  for (let prop in obj) {
+    objCopy[prop] = obj[prop];
+  }
+  return objCopy;
+}
+
+BETTER SOLUTION:
+
+function clone(obj) {
+  return Object.assign({}, obj);
+}
+
+let person = {
+  title: 'Duke',
+  name: {
+    value: 'Nukem',
+    isStageName: true
+  },
+  age: 33
+};
+
+let clonedPerson = clone(person);
+person.age = 34;
+
+console.log(person.age);       // 34
+console.log(clonedPerson.age); // 33
+
+person.name.isStageName = false;
+console.log(person.name.isStageName);       // false
+console.log(clonedPerson.name.isStageName); // false
+*/
