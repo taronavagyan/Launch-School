@@ -10,3 +10,4 @@ Mar 31, 2022: I've finished the Intro to Programming with JavaScript book and am
 
 April 6, 2022: I finished the preparatory courses and will start the Core Curriculum upon approval. 
 
+April 7, 2022: I've just been accepted into the Core Curriculum for Launch School and am starting my journey!
