@@ -29,4 +29,4 @@ if (operation === "1") {
   output = number1 / number2;
 }
 
-console.log(`The result is ${output}.`);
+console.log(`The result is ${output}!`);
