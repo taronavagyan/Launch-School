@@ -1,3 +1,11 @@
+/*
+ * welcome
+ * get valid numbers
+ * get operation
+ * do operation
+ * return result
+ * ask for repeat
+ */
 const readline = require("readline-sync");
 const MESSAGES = require("./calculator_messages.json");
 const LANGUAGE = "en";
@@ -5,33 +13,35 @@ const LANGUAGE = "en";
 function messages(message, lang) {
   return MESSAGES[lang][message];
 }
+
 function prompt(key) {
   let message = messages(key, LANGUAGE);
   console.log(`=> ${message}`);
 }
 
-function invalidNumber(num) {
+function isInvalidNumber(num) {
   return num.trimStart() === "" || Number.isNaN(Number(num));
+}
+
+function getNumber(whichNumber) {
+  let givenNumber;
+  prompt(whichNumber);
+  while (true) {
+    givenNumber = readline.question();
+    if (isInvalidNumber(givenNumber)) {
+      prompt("invalidNumber");
+    } else {
+      return Number(givenNumber);
+    }
+  }
 }
 
 prompt("welcome");
 
 while (true) {
-  prompt("firstNumber");
-  let number1 = readline.question();
+  let number1 = getNumber("firstNumber");
+  let number2 = getNumber("secondNumber");
 
-  while (invalidNumber(number1)) {
-    prompt("invalidNumber");
-    number1 = readline.question();
-  }
-
-  prompt("secondNumber");
-  let number2 = readline.question();
-
-  while (invalidNumber(number2)) {
-    prompt("invalidNumber");
-    number2 = readline.question();
-  }
   prompt("operation");
   let operation = readline.question();
 
@@ -44,19 +54,19 @@ while (true) {
   switch (operation) {
     case "1":
     case "+":
-      output = Number(number1) + Number(number2);
+      output = number1 + number2;
       break;
     case "2":
     case "-":
-      output = Number(number1) - Number(number2);
+      output = number1 - number2;
       break;
     case "3":
     case "*":
-      output = Number(number1) * Number(number2);
+      output = number1 * number2;
       break;
     case "4":
     case "/":
-      output = Number(number1) / Number(number2);
+      output = number1 / number2;
       break;
   }
 
