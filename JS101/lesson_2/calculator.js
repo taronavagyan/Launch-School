@@ -36,6 +36,12 @@ function getNumber(whichNumber) {
   }
 }
 
+/*
+function executeOperation(num1,num2,operator) {
+  //TODO
+}
+*/
+
 prompt("welcome");
 
 while (true) {
