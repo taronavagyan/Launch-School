@@ -31,6 +31,10 @@ function getMonthlyInterest() {
   prompt("Example: 10 for 10% or 3.5 or 3.5%");
   let yearlyInterest = readline.question();
 
+  if (yearlyInterest[yearlyInterest.length - 1] === "%") {
+    yearlyInterest = yearlyInterest.slice(0, -1);
+  }
+
   while (yearlyInterest < 0 || yearlyInterest.trimStart() === "") {
     prompt("Please provide a positive interest rate.");
     yearlyInterest = readline.question();
@@ -73,15 +77,17 @@ function calculateMonthlyPayments(
 }
 
 function restart() {
-  prompt("Would you like to do another calculation? (y/n)");
-  if (
-    readline.question().toLowerCase() === "y" ||
-    readline.question().toLowerCase() === "yes"
-  ) {
-    console.clear();
-    start();
-  } else {
-    prompt("Thank you for using this loan calculator!");
+  let choice;
+  prompt("Would you like to do another calculation?");
+  while (!["y", "n", "yes", "no"].includes(choice)) {
+    prompt("Please enter: 'y' or 'n'");
+    choice = readline.question().toLowerCase();
+    if (choice === "y" || choice === "yes") {
+      console.clear();
+      start();
+    } else if (choice === "n" || choice === "no") {
+      prompt("Thank you for using Mortgage Calculator!");
+    }
   }
 }
 
