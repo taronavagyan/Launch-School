@@ -16,7 +16,7 @@ function prompt(message) {
 }
 
 function getLoanAmount() {
-  prompt("How big of a loan would you like? (USD)");
+  prompt("What size loan would you like? (USD)");
   let loanAmount = Number(readline.question("$"));
 
   while (loanAmount <= 0 || Number.isNaN(loanAmount)) {
