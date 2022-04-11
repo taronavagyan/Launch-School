@@ -28,6 +28,7 @@ function getLoanAmount() {
 
 function getMonthlyInterest() {
   prompt("What is the annual interest rate (APR)?");
+  prompt("Example: 10 for 10% or 3.5 or 3.5%");
   let yearlyInterest = readline.question() / 100;
 
   while (yearlyInterest < 0) {
@@ -39,8 +40,10 @@ function getMonthlyInterest() {
 
 function getLoanDuration() {
   prompt("How many years and months would you like the loan to be for?");
-  let loanDurationInYears = "" + readline.question("Years: ");
-  let loanDurationExtraMonths = "" + readline.question("Months: ");
+  let loanDurationInYears =
+    "" + readline.question("Years (Press Enter to Skip): ");
+  let loanDurationExtraMonths =
+    "" + readline.question("Months (Press Enter to Skip): ");
 
   //prettier-ignore
   let loanDurationInMonths =
@@ -57,16 +60,18 @@ function repeat() {
   }
 }
 
+prompt("Welcome to Mortgage Calculator!");
 function start() {
-  prompt("Welcome!");
+  console.log("----------------------------------");
   let loanAmount = getLoanAmount();
   let monthlyInterest = getMonthlyInterest();
   let loanDurationInMonths = getLoanDuration();
   //prettier-ignore
-  let monthlyPayments = Math.round(
-    loanAmount *
+  let monthlyPayments =
+    (loanAmount *
     (monthlyInterest /
-      (1 - Math.pow((1 + monthlyInterest), (-loanDurationInMonths)))));
+      (1 -
+        Math.pow((1 + monthlyInterest), (-loanDurationInMonths))))).toFixed(2);
   prompt(`Your payments for this loan would be $${monthlyPayments} per month.`);
   repeat();
 }
