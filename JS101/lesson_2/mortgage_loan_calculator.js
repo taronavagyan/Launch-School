@@ -51,9 +51,26 @@ function getLoanDuration() {
   return loanDurationInMonths;
 }
 
-function repeat() {
+function calculateMonthlyPayments(
+  loanAmount,
+  monthlyInterest,
+  loanDurationInMonths
+) {
+  let monthlyPayments = (
+    loanAmount *
+    (monthlyInterest /
+      (1 - Math.pow(1 + monthlyInterest, -loanDurationInMonths)))
+  ).toFixed(2);
+  return monthlyPayments;
+}
+
+function restart() {
   prompt("Would you like to do another calculation? (y/n)");
-  if (readline.question().toLowerCase() === "y") {
+  if (
+    readline.question().toLowerCase() === "y" ||
+    readline.question().toLowerCase() === "yes"
+  ) {
+    console.clear();
     start();
   } else {
     prompt("Thank you for using this loan calculator!");
@@ -62,18 +79,18 @@ function repeat() {
 
 prompt("Welcome to Mortgage Calculator!");
 function start() {
-  console.log("----------------------------------");
+  console.log("-------------------------------------------------");
   let loanAmount = getLoanAmount();
   let monthlyInterest = getMonthlyInterest();
   let loanDurationInMonths = getLoanDuration();
-  //prettier-ignore
-  let monthlyPayments =
-    (loanAmount *
-    (monthlyInterest /
-      (1 -
-        Math.pow((1 + monthlyInterest), (-loanDurationInMonths))))).toFixed(2);
+  let monthlyPayments = calculateMonthlyPayments(
+    loanAmount,
+    monthlyInterest,
+    loanDurationInMonths
+  );
+
   prompt(`Your payments for this loan would be $${monthlyPayments} per month.`);
-  repeat();
+  restart();
 }
 
 start();
