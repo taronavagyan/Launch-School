@@ -12,7 +12,7 @@
 const readline = require("readline-sync");
 
 function prompt(message) {
-  console.log(`=> ${message}`);
+  console.log(`> ${message}`);
 }
 
 function getLoanAmount() {
@@ -29,25 +29,33 @@ function getLoanAmount() {
 function getMonthlyInterest() {
   prompt("What is the annual interest rate (APR)?");
   prompt("Example: 10 for 10% or 3.5 or 3.5%");
-  let yearlyInterest = readline.question() / 100;
+  let yearlyInterest = readline.question();
 
-  while (yearlyInterest < 0) {
+  while (yearlyInterest < 0 || yearlyInterest.trimStart() === "") {
     prompt("Please provide a positive interest rate.");
-    yearlyInterest = readline.question() / 100;
+    yearlyInterest = readline.question();
   }
-  return yearlyInterest / 12;
+  let monthlyInterest = yearlyInterest / 100 / 12;
+  return monthlyInterest;
 }
 
 function getLoanDuration() {
   prompt("How many years and months would you like the loan to be for?");
-  let loanDurationInYears =
-    "" + readline.question("Years (Press Enter to Skip): ");
-  let loanDurationExtraMonths =
-    "" + readline.question("Months (Press Enter to Skip): ");
+  let loanDurationFullYears = readline.question("Years (Press Enter for 0): ");
+  let loanDurationExtraMonths = readline.question(
+    "Months (Press Enter for 0): "
+  );
 
+  while (loanDurationExtraMonths < 1 && loanDurationFullYears < 1) {
+    prompt("Your loan term must be at least one month. Enter a new loan term.");
+    loanDurationFullYears =
+      "" + readline.question("Years (Press Enter for 0): ");
+    loanDurationExtraMonths =
+      "" + readline.question("Months (Press Enter for 0): ");
+  }
   //prettier-ignore
   let loanDurationInMonths =
-    (loanDurationInYears * 12) + Number(loanDurationExtraMonths);
+    (loanDurationFullYears * 12) + Number(loanDurationExtraMonths);
   return loanDurationInMonths;
 }
 
