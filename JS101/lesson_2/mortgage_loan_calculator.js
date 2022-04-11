@@ -17,10 +17,20 @@ function prompt(message) {
 const readline = require("readline-sync");
 
 prompt("How big of a loan would you like? (USD)");
-let loanAmount = "" + readline.question();
+let loanAmount = Number(readline.question("$"));
 
-prompt("What is the APR (0-100)?");
+while (loanAmount <= 0 || Number.isNaN(loanAmount)) {
+  prompt("Something seems off... Try re-entering the loan amount.");
+  loanAmount = Number(readline.question("$"));
+}
+
+prompt("What is the annual interest rate (APR)?");
 let yearlyInterest = readline.question() / 100;
+
+while (yearlyInterest < 0) {
+  prompt("Please provide a positive interest rate.");
+  yearlyInterest = readline.question() / 100;
+}
 
 prompt("How many years would you like the loan to be for?");
 let loanDurationInYears = "" + readline.question();
