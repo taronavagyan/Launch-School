@@ -32,10 +32,14 @@ function getMonthlyInterest() {
   let yearlyInterest = readline.question();
 
   if (yearlyInterest[yearlyInterest.length - 1] === "%") {
-    yearlyInterest = yearlyInterest.slice(0, -1);
+    yearlyInterest = Number(yearlyInterest.slice(0, -1));
   }
 
-  while (yearlyInterest < 0 || yearlyInterest.trimStart() === "") {
+  while (
+    yearlyInterest < 0 ||
+    yearlyInterest.trimStart() === "" ||
+    isNaN(yearlyInterest)
+  ) {
     prompt("Please provide a positive interest rate.");
     yearlyInterest = readline.question();
   }
@@ -43,24 +47,31 @@ function getMonthlyInterest() {
   return monthlyInterest;
 }
 
+// eslint-disable-next-line max-lines-per-function
 function getLoanDuration() {
   prompt("How many years and months would you like the loan to be for?");
-  let loanDurationFullYears = readline.question("Years (Press Enter for 0): ");
-  let loanDurationExtraMonths = readline.question(
-    "Months (Press Enter for 0): "
+  let loanDurationFullYears = Number(
+    readline.question("Years (Press Enter for 0): ")
+  );
+  let loanDurationExtraMonths = Number(
+    readline.question("Months (Press Enter for 0): ")
   );
 
-  while (loanDurationExtraMonths < 1 && loanDurationFullYears < 1) {
-    prompt("Your loan term must be at least one month. Enter a new loan term.");
+  while (
+    (loanDurationFullYears < 1 && loanDurationExtraMonths < 1) ||
+    loanDurationFullYears < 0 ||
+    loanDurationExtraMonths < 0 ||
+    isNaN(loanDurationFullYears) ||
+    isNaN(loanDurationExtraMonths)
+  ) {
+    prompt("Invalid input. Enter a new loan term.");
     loanDurationFullYears =
       "" + readline.question("Years (Press Enter for 0): ");
     loanDurationExtraMonths =
       "" + readline.question("Months (Press Enter for 0): ");
   }
   //prettier-ignore
-  let loanDurationInMonths =
-    (loanDurationFullYears * 12) + Number(loanDurationExtraMonths);
-  return loanDurationInMonths;
+  return (loanDurationFullYears * 12) + Number(loanDurationExtraMonths);
 }
 
 function calculateMonthlyPayments(
@@ -91,6 +102,7 @@ function restart() {
   }
 }
 
+console.clear();
 prompt("Welcome to Mortgage Calculator!");
 function start() {
   console.log("-------------------------------------------------");
