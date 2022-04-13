@@ -1,6 +1,7 @@
+/* eslint-disable max-len */
 // 1.
 
-/* 
+/*
 0
 null
 ''
@@ -35,20 +36,20 @@ console.log(randomNumber ? 'Yes!' : 'No.');
 /*
 let weather = "dog";
 
-if (weather === "sunny")  
+if (weather === "sunny")
   console.log("It's a beautiful day!");
 else if (weather === "rainy")
   console.log("Grab your umbrella.");
-else 
+else
   console.log("Let's stay inside.");
 */
 
 // 5.
 
-/* 
-neigh 
-tweet tweet 
-*cricket* 
+/*
+neigh
+tweet tweet
+*cricket*
 */
 
 // 6.
@@ -82,10 +83,8 @@ switch (weather) {
 
 // 10.
 
-/* 
+/*
 true
 It is not the same because without parentheses is equivalent to ((brakingForce < acceleration && speed > 0) || acceleration > 0);
 However, the expression would still evaluate to true in this situation.
 */
-
-
