@@ -68,7 +68,10 @@ jane.greet('Bobby'); // Hej, Bobby!
 
 // 5.
 
-/* The first bit of code will log { prefix: 'Pacific } because only bracket notation can take expressions. */
+/*
+The first bit of code will log { prefix: 'Pacific }
+because only bracket notation can take expressions.
+*/
 
 // 6.
 
