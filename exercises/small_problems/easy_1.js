@@ -31,6 +31,7 @@ for (let count = 2; count <= 99; count += 2) {
 
 // 4.
 
+/*
 const readline = require("readline-sync");
 const SQMETERS_TO_SQFEET = 10.7639;
 
@@ -56,7 +57,8 @@ if (desiredInput === "meters") {
   let areaInMeters = (widthInMeters * lengthInMeters).toFixed(2);
   let areaInFeet = (areaInMeters * SQMETERS_TO_SQFEET).toFixed(2);
   console.log(
-    `The area of the room is ${areaInMeters} square meters (${areaInFeet} square feet).`
+    `The area of the room is ${areaInMeters} square
+     meters (${areaInFeet} square feet).`
   );
 } else {
   console.log("Enter the length of the room in feet:");
@@ -68,6 +70,67 @@ if (desiredInput === "meters") {
   let areaInFeet = (lengthInFeet * widthInFeet).toFixed(2);
   let areaInMeters = (areaInFeet / SQMETERS_TO_SQFEET).toFixed(2);
   console.log(
-    `The area of the room is ${areaInFeet} square feet (${areaInMeters} square meters.)`
+    `The area of the room is ${areaInFeet} square feet
+     (${areaInMeters} square meters.)`
   );
 }
+*/
+
+// 5.
+
+/*
+const readline = require("readline-sync");
+
+let billAmount = readline.question("What is the bill? ");
+//prettier-ignore
+let tipPercent = 1 + (readline.question("What is the tip percentage? ") / 100);
+let totalDue = Math.round(billAmount * tipPercent).toFixed(2);
+let tipAmount = Math.round(totalDue - billAmount).toFixed(2);
+
+console.log(`The tip is $${tipAmount}`);
+console.log(`The total is $${totalDue}`);
+*/
+
+// 6.
+
+/*
+const readline = require("readline-sync");
+
+let integerGiven = Number(
+  readline.question("Please input an integer greater than 0: ")
+);
+
+while (integerGiven <= 0) {
+  integerGiven = readline.question(
+    "Invalid input. Please enter an integer greater than 0: "
+  );
+}
+
+let sumOrProduct = readline.question(
+  'Enter "s" to compute the sum, or "p" to compute the product: '
+);
+
+while (!["s", "p"].includes(sumOrProduct)) {
+  sumOrProduct = readline.question(
+    'Invalid input. Enter "s" to compute the sum, or "p"
+     to compute the product: '
+  );
+}
+if (sumOrProduct === "s") {
+  let sum = 0;
+  for (let count = 1; count <= integerGiven; count += 1) {
+    sum += count;
+  }
+  console.log(
+    `The sum of the integers between 1 and ${integerGiven} is ${sum}.`
+  );
+} else {
+  let product = 1;
+  for (let count = 1; count <= integerGiven; count += 1) {
+    product *= count;
+  }
+  console.log(
+    `The product of the integers between 1 and ${integerGiven} is ${product}.`
+  );
+}
+*/
