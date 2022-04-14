@@ -146,3 +146,46 @@ console.log(evens(["abc", "def"])); // logs ['abc']
 console.log(evens([123])); // logs [123]
 console.log(evens([])); // logs []
 */
+
+// 9.
+
+/*
+function stringToInteger(string) {
+  return string / 1;
+}
+
+
+console.log(stringToInteger("4321") === 4321); // logs true
+console.log(stringToInteger("570") === 570); // logs true
+
+
+// eslint-disable-next-line max-lines-per-function
+function hexademicalToInteger(hexadecimal) {
+  const DIGITS = {
+    0: 0,
+    1: 1,
+    2: 2,
+    3: 3,
+    4: 4,
+    5: 5,
+    6: 6,
+    7: 7,
+    8: 8,
+    9: 9,
+    A: 10,
+    B: 11,
+    C: 12,
+    D: 13,
+    E: 14,
+    F: 15,
+  };
+  let value = 0;
+  for (let char of hexadecimal) {
+    //prettier-ignore
+    value = (value * 16) + DIGITS[char.toUpperCase()];
+  }
+  return value;
+}
+
+console.log(hexademicalToInteger("4D9f") === 19871); //logs true
+*/
