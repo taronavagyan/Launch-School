@@ -84,3 +84,29 @@ let num2 = Number(readline.question());
 
 doAllOperations(num1, num2);
 */
+
+// 6.
+
+/*
+function penultimate(string) {
+  let words = string.split(" ");
+  return words[words.length - 2];
+}
+
+console.log(penultimate("last word") === "last"); // logs true
+console.log(penultimate("Launch School is great!") === "is"); // logs true
+
+function middleWord(string) {
+  let words = string.split(" ");
+  if (words.length % 2 === 1) {
+    return words[Math.floor(words.length / 2)];
+  }
+  //prettier-ignore
+  let firstMidWord = words[(words.length / 2) - 1];
+  let secondMidWord = words[words.length / 2];
+  return [firstMidWord, secondMidWord];
+}
+
+console.log(middleWord("mary had a little lamb she loved")); // 'little'
+console.log(middleWord("I love to eat")); // [ 'love', 'to' ];
+*/
