@@ -134,3 +134,112 @@ if (sumOrProduct === "s") {
   );
 }
 */
+
+// 7.
+
+/*
+function shortLongShort(string1, string2) {
+  let shortString;
+  let longString;
+  if (string1.length < string2.length) {
+    shortString = string1;
+    longString = string2;
+  } else {
+    shortString = string2;
+    longString = string1;
+  }
+  return shortString.concat(longString).concat(shortString);
+}
+
+shortLongShort("1231244", "abc");
+*/
+
+// 8.
+
+/*
+function isLeapYear(year) {
+  if (year % 100 === 0 && year % 400 !== 0) {
+    return false;
+  }
+  if (year % 4 !== 0) {
+    return false;
+  }
+  return true;
+}
+
+isLeapYear(2016); // true
+isLeapYear(2015); // false
+isLeapYear(2100); // false
+isLeapYear(2400); // true
+isLeapYear(240000); // true
+isLeapYear(240001); // false
+isLeapYear(2000); // true
+isLeapYear(1900); // false
+isLeapYear(1752); // true
+isLeapYear(1700); // false
+isLeapYear(1); // false
+isLeapYear(100); // false
+isLeapYear(400); // true
+*/
+
+// 9.
+
+/*
+function isLeapYear(year) {
+  if (year <= 1752) {
+    return year % 4 === 0;
+  }
+  if (year % 100 === 0 && year % 400 !== 0) {
+    return false;
+  }
+  if (year % 4 !== 0) {
+    return false;
+  }
+  return true;
+}
+
+isLeapYear(2016);      // true
+isLeapYear(2015);      // false
+isLeapYear(2100);      // false
+isLeapYear(2400);      // true
+isLeapYear(240000);    // true
+isLeapYear(240001);    // false
+isLeapYear(2000);      // true
+isLeapYear(1900);      // false
+isLeapYear(1752);      // true
+isLeapYear(1700);      // true
+isLeapYear(1);         // false
+isLeapYear(100);       // true
+isLeapYear(400);       // true
+*/
+
+// 10.
+
+/*
+function multisum(num) {
+  let multiples = [];
+  for (let count = 1; count <= num; count += 1) {
+    if (count % 3 === 0) {
+      multiples.push(count);
+    } else if (count % 5 === 0) {
+      multiples.push(count);
+    }
+  }
+  return multiples.reduce((accumulator, multiple) => accumulator + multiple, 0);
+}
+
+console.log(multisum(1000));
+*/
+// 11.
+
+/*
+function utf16Value(string) {
+  let sumOfValues = 0;
+
+  for (let index = 0; index < string.length; index += 1) {
+    sumOfValues += string.charCodeAt(index);
+  }
+
+  return sumOfValues;
+}
+*/
