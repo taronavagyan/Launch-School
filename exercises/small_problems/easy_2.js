@@ -110,3 +110,39 @@ function middleWord(string) {
 console.log(middleWord("mary had a little lamb she loved")); // 'little'
 console.log(middleWord("I love to eat")); // [ 'love', 'to' ];
 */
+
+// 7.
+
+/*
+function xor(arg1, arg2) {
+  return !!((arg1 && !arg2) || (!arg1 && arg2));
+}
+
+console.log(xor(5, 0) === true);
+console.log(xor(false, true) === true);
+console.log(xor(1, 1) === false);
+console.log(xor(true, true) === false);
+*/
+
+// 8.
+
+/*
+function oddities(array) {
+  let arrayWithOdds = [];
+
+  for (let count = 0; count <= array.length - 1; count += 2) {
+    arrayWithOdds.push(array[count]);
+  }
+  return arrayWithOdds;
+}
+
+function evens(array) {
+  return array.filter((undefined, index) => index % 2 === 1);
+}
+
+console.log(evens([2, 3, 4, 5, 6])); // logs [2, 4, 6]
+console.log(evens([1, 2, 3, 4, 5, 6])); // logs [1, 3, 5]
+console.log(evens(["abc", "def"])); // logs ['abc']
+console.log(evens([123])); // logs [123]
+console.log(evens([])); // logs []
+*/
