@@ -189,3 +189,69 @@ function hexademicalToInteger(hexadecimal) {
 
 console.log(hexademicalToInteger("4D9f") === 19871); //logs true
 */
+
+// 10.
+
+/*
+function stringToSignedInteger(string) {
+  return string / 1;
+}
+
+console.log(stringToSignedInteger("4321") === 4321); // logs true
+console.log(stringToSignedInteger("-570") === -570); // logs true
+console.log(stringToSignedInteger("+100") === 100); // logs true
+*/
+
+// 11.
+
+/*
+const DIGITS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+function integerToString(number) {
+  let result = "";
+
+  do {
+    let remainder = number % 10;
+    number = Math.floor(number / 10);
+
+    result = DIGITS[remainder] + result;
+  } while (number > 0);
+
+  return result;
+}
+
+integerToString(4321); // "4321"
+integerToString(0); // "0"
+integerToString(5000); // "5000"
+integerToString(1234567890); // "1234567890"
+*/
+
+// 12.
+
+/*
+const DIGITS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+function integerToString(number) {
+  let result = "";
+
+  do {
+    let remainder = number % 10;
+    number = Math.floor(number / 10);
+
+    result = DIGITS[remainder] + result;
+  } while (number > 0);
+
+  return result;
+}
+
+function signedIntegerToString(number) {
+  if (Math.sign(number) === 1) {
+    return "+" + integerToString(number);
+  } else if (Math.sign(number) === 0) {
+    return integerToString(number);
+  }
+  return "-" + integerToString(Math.abs(number));
+}
+
+console.log(signedIntegerToString(4321) === "+4321");
+console.log(signedIntegerToString(-123) === "-123");
+console.log(signedIntegerToString(0) === "0");
+*/
