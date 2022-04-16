@@ -5,14 +5,14 @@
  */
 
 const readline = require("readline-sync");
-const VALID_CHOICES = ["rock", "paper", "scissors"];
+const VALID_CHOICES = ["rock", "paper", "scissors", "lizard", "spock"];
 let answer = "";
 
 function prompt(msg) {
   console.log(`=> ${msg}`);
 }
 
-let userWon = function (choice, computerChoice) {
+function userWon(choice, computerChoice) {
   return (
     (choice === "rock" &&
       (computerChoice === "scissors" || computerChoice === "lizard")) ||
@@ -25,27 +25,29 @@ let userWon = function (choice, computerChoice) {
     (choice === "spock" &&
       (computerChoice === "rock" || computerChoice === "scissors"))
   );
-};
+}
 
-let computerWon = function (choice, computerChoice) {
+function computerWon(choice, computerChoice) {
   return (
-    (computerChoice === "rock" &&
-      (choice === "scissors" || choice === "lizard")) ||
-    (computerChoice === "scissors" &&
-      (choice === "paper" || choice === "lizard")) ||
-    (computerChoice === "paper" && (choice === "rock" || choice === "spock")) ||
-    (computerChoice === "lizard" &&
-      (choice === "spock" || choice === "paper")) ||
-    (computerChoice === "spock" && (choice === "rock" || choice === "scissors"))
+    (choice === "rock" &&
+      (computerChoice === "spock" || computerChoice === "paper")) ||
+    (choice === "scissors" &&
+      (computerChoice === "rock" || computerChoice === "spock")) ||
+    (choice === "paper" &&
+      (computerChoice === "scissors" || computerChoice === "lizard")) ||
+    (choice === "lizard" &&
+      (computerChoice === "scissors" || computerChoice === "rock")) ||
+    (choice === "spock" &&
+      (computerChoice === "lizard" || computerChoice === "paper"))
   );
-};
+}
 
 function displayWinner(choice, computerChoice) {
   prompt(`You chose ${choice}. Computer chose ${computerChoice}.`);
 
-  if (userWon) {
+  if (userWon(choice, computerChoice)) {
     prompt("You won!");
-  } else if (computerWon) {
+  } else if (computerWon(choice, computerChoice)) {
     prompt("Computer won!");
   } else {
     prompt("It's a tie!");
