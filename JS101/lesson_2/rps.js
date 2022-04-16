@@ -11,6 +11,26 @@ function prompt(msg) {
   console.log(`=> ${msg}`);
 }
 
+function displayWinner(choice, computerChoice) {
+  prompt(`You chose ${choice}. Computer chose ${computerChoice}.`);
+
+  if (
+    (choice === "rock" && computerChoice === "scissors") ||
+    (choice === "scissors" && computerChoice === "paper") ||
+    (choice === "paper" && computerChoice === "rock")
+  ) {
+    prompt("You won!");
+  } else if (
+    (choice === "rock" && computerChoice === "paper") ||
+    (choice === "paper" && computerChoice === "scissors") ||
+    (choice === "scissors" && computerChoice === "rock")
+  ) {
+    prompt("Computer won!");
+  } else {
+    prompt("It's a tie!");
+  }
+}
+
 while (true) {
   prompt(`Choose one: ${VALID_CHOICES.join(", ")}`);
   let choice = readline.question();
@@ -23,23 +43,7 @@ while (true) {
   let randomIndex = Math.floor(Math.random() * VALID_CHOICES.length);
   let computerChoice = VALID_CHOICES[randomIndex];
 
-  prompt(`You chose ${choice}. Computer chose ${computerChoice}.`);
-
-  if (
-    (choice === "rock" && computerChoice === "scissors") ||
-    (choice === "scissors" && computerChoice === "paper") ||
-    (choice === "paper" && computerChoice === "rock")
-  ) {
-    prompt("You won!");
-  } else if (
-    (choice === "scissors" && computerChoice === "rock") ||
-    (choice === "paper" && computerChoice === "scissors") ||
-    (choice === "rock" && computerChoice === "paper")
-  ) {
-    prompt("Computer won!");
-  } else {
-    prompt("It's a tie!");
-  }
+  displayWinner(choice, computerChoice);
 
   prompt("Would you like to play again? (y/n)");
   let answer = readline.question().toLowerCase();
@@ -49,7 +53,5 @@ while (true) {
     answer = readline.question().toLowerCase();
   }
 
-  if (answer[0] !== "y") {
-    break;
-  }
+  if (answer[0] !== "y") break;
 }
