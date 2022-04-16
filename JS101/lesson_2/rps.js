@@ -14,6 +14,9 @@ const CHOICE_PAIRS = {
 };
 const CHOICE_KEYS = Object.keys(CHOICE_PAIRS);
 const CHOICE_VALUES = Object.values(CHOICE_PAIRS);
+const POINTS_TO_WIN = 5;
+let userPoints = 0;
+let computerPoints = 0;
 let answer = "";
 
 function prompt(msg) {
@@ -50,7 +53,18 @@ function computerWon(choice, computerChoice) {
   );
 }
 
-function displayWinner(choice, computerChoice) {
+function tallyPoints(choice, computerChoice) {
+  if (userWon(choice, computerChoice)) {
+    userPoints += 1;
+  } else if (computerWon(choice, computerChoice)) {
+    computerPoints += 1;
+  } else {
+    userPoints += 0.5;
+    computerPoints += 0.5;
+  }
+}
+
+function displayGameWinner(choice, computerChoice) {
   prompt(`You chose ${choice}. Computer chose ${computerChoice}.`);
 
   if (userWon(choice, computerChoice)) {
@@ -59,6 +73,21 @@ function displayWinner(choice, computerChoice) {
     prompt("Computer won!");
   } else {
     prompt("It's a tie!");
+  }
+}
+
+function displayMatchScore() {
+  console.log(userPoints, computerPoints);
+  if (userPoints >= POINTS_TO_WIN) {
+    prompt("You won!");
+  } else if (computerPoints >= POINTS_TO_WIN) {
+    prompt("Computer won!");
+  } else if (userPoints > computerPoints) {
+    prompt(`You're up ${userPoints} to ${computerPoints}. Match to 5.`);
+  } else if (userPoints < computerPoints) {
+    prompt(`You're down ${userPoints} to ${computerPoints}. Match to 5.`);
+  } else {
+    prompt(`You're tied ${userPoints} to ${computerPoints}. Match to 5.`);
   }
 }
 
@@ -81,7 +110,9 @@ while (answer[0] !== "n") {
   let randomIndex = Math.floor(Math.random() * CHOICE_KEYS.length);
   let computerChoice = CHOICE_VALUES[randomIndex];
 
-  displayWinner(choice, computerChoice);
+  displayGameWinner(choice, computerChoice);
+  tallyPoints();
+  displayMatchScore();
 
   prompt("Would you like to play again? (y/n)");
   answer = readline.question().toLowerCase();
