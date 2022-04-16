@@ -38,29 +38,14 @@ function userWon(choice, computerChoice) {
   );
 }
 
-function computerWon(choice, computerChoice) {
-  return (
-    (choice === "rock" &&
-      (computerChoice === "spock" || computerChoice === "paper")) ||
-    (choice === "scissors" &&
-      (computerChoice === "rock" || computerChoice === "spock")) ||
-    (choice === "paper" &&
-      (computerChoice === "scissors" || computerChoice === "lizard")) ||
-    (choice === "lizard" &&
-      (computerChoice === "scissors" || computerChoice === "rock")) ||
-    (choice === "spock" &&
-      (computerChoice === "lizard" || computerChoice === "paper"))
-  );
-}
-
 function tallyPoints(choice, computerChoice) {
   if (userWon(choice, computerChoice)) {
     userPoints += 1;
-  } else if (computerWon(choice, computerChoice)) {
-    computerPoints += 1;
-  } else {
+  } else if (choice === computerChoice) {
     userPoints += 0.5;
     computerPoints += 0.5;
+  } else {
+    computerPoints += 1;
   }
 }
 
@@ -69,19 +54,18 @@ function displayGameWinner(choice, computerChoice) {
 
   if (userWon(choice, computerChoice)) {
     prompt("You won!");
-  } else if (computerWon(choice, computerChoice)) {
-    prompt("Computer won!");
-  } else {
+  } else if (choice === computerChoice) {
     prompt("It's a tie!");
+  } else {
+    prompt("Computer won!");
   }
 }
 
 function displayMatchScore() {
-  console.log(userPoints, computerPoints);
   if (userPoints >= POINTS_TO_WIN) {
-    prompt("You won!");
+    prompt("You won the match!");
   } else if (computerPoints >= POINTS_TO_WIN) {
-    prompt("Computer won!");
+    prompt("Computer won the match!");
   } else if (userPoints > computerPoints) {
     prompt(`You're up ${userPoints} to ${computerPoints}. Match to 5.`);
   } else if (userPoints < computerPoints) {
@@ -91,6 +75,7 @@ function displayMatchScore() {
   }
 }
 
+console.clear();
 while (answer[0] !== "n") {
   prompt(`Choose one: ${CHOICE_VALUES.join(", ")}`);
   let choice = readline.question();
@@ -111,14 +96,16 @@ while (answer[0] !== "n") {
   let computerChoice = CHOICE_VALUES[randomIndex];
 
   displayGameWinner(choice, computerChoice);
-  tallyPoints();
-  displayMatchScore();
+  tallyPoints(choice, computerChoice);
+  displayMatchScore(choice, computerChoice);
 
-  prompt("Would you like to play again? (y/n)");
-  answer = readline.question().toLowerCase();
-
-  while (answer[0] !== "y" && answer[0] !== "n") {
-    prompt("Please enter 'y' or 'n'");
+  if (userPoints >= POINTS_TO_WIN || computerPoints >= POINTS_TO_WIN) {
+    prompt("Would you like to play again? (y/n)");
     answer = readline.question().toLowerCase();
+
+    while (answer[0] !== "y" && answer[0] !== "n") {
+      prompt("Please enter 'y' or 'n'");
+      answer = readline.question().toLowerCase();
+    }
   }
 }
