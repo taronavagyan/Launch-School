@@ -12,20 +12,40 @@ function prompt(msg) {
   console.log(`=> ${msg}`);
 }
 
+let userWon = function (choice, computerChoice) {
+  return (
+    (choice === "rock" &&
+      (computerChoice === "scissors" || computerChoice === "lizard")) ||
+    (choice === "scissors" &&
+      (computerChoice === "paper" || computerChoice === "lizard")) ||
+    (choice === "paper" &&
+      (computerChoice === "rock" || computerChoice === "spock")) ||
+    (choice === "lizard" &&
+      (computerChoice === "spock" || computerChoice === "paper")) ||
+    (choice === "spock" &&
+      (computerChoice === "rock" || computerChoice === "scissors"))
+  );
+};
+
+let computerWon = function (choice, computerChoice) {
+  return (
+    (computerChoice === "rock" &&
+      (choice === "scissors" || choice === "lizard")) ||
+    (computerChoice === "scissors" &&
+      (choice === "paper" || choice === "lizard")) ||
+    (computerChoice === "paper" && (choice === "rock" || choice === "spock")) ||
+    (computerChoice === "lizard" &&
+      (choice === "spock" || choice === "paper")) ||
+    (computerChoice === "spock" && (choice === "rock" || choice === "scissors"))
+  );
+};
+
 function displayWinner(choice, computerChoice) {
   prompt(`You chose ${choice}. Computer chose ${computerChoice}.`);
 
-  if (
-    (choice === "rock" && computerChoice === "scissors") ||
-    (choice === "scissors" && computerChoice === "paper") ||
-    (choice === "paper" && computerChoice === "rock")
-  ) {
+  if (userWon) {
     prompt("You won!");
-  } else if (
-    (choice === "rock" && computerChoice === "paper") ||
-    (choice === "paper" && computerChoice === "scissors") ||
-    (choice === "scissors" && computerChoice === "rock")
-  ) {
+  } else if (computerWon) {
     prompt("Computer won!");
   } else {
     prompt("It's a tie!");
