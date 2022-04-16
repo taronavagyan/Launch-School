@@ -6,6 +6,7 @@
 
 const readline = require("readline-sync");
 const VALID_CHOICES = ["rock", "paper", "scissors"];
+let answer = "";
 
 function prompt(msg) {
   console.log(`=> ${msg}`);
@@ -31,7 +32,7 @@ function displayWinner(choice, computerChoice) {
   }
 }
 
-while (true) {
+while (answer[0] !== "n") {
   prompt(`Choose one: ${VALID_CHOICES.join(", ")}`);
   let choice = readline.question();
 
@@ -46,12 +47,10 @@ while (true) {
   displayWinner(choice, computerChoice);
 
   prompt("Would you like to play again? (y/n)");
-  let answer = readline.question().toLowerCase();
+  answer = readline.question().toLowerCase();
 
   while (answer[0] !== "y" && answer[0] !== "n") {
     prompt("Please enter 'y' or 'n'");
     answer = readline.question().toLowerCase();
   }
-
-  if (answer[0] !== "y") break;
 }
