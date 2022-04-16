@@ -5,7 +5,15 @@
  */
 
 const readline = require("readline-sync");
-const VALID_CHOICES = ["rock", "paper", "scissors", "lizard", "spock"];
+const CHOICE_PAIRS = {
+  r: "rock",
+  p: "paper",
+  x: "scissors",
+  l: "lizard",
+  s: "spock",
+};
+const CHOICE_KEYS = Object.keys(CHOICE_PAIRS);
+const CHOICE_VALUES = Object.values(CHOICE_PAIRS);
 let answer = "";
 
 function prompt(msg) {
@@ -55,16 +63,23 @@ function displayWinner(choice, computerChoice) {
 }
 
 while (answer[0] !== "n") {
-  prompt(`Choose one: ${VALID_CHOICES.join(", ")}`);
+  prompt(`Choose one: ${CHOICE_VALUES.join(", ")}`);
   let choice = readline.question();
 
-  while (!VALID_CHOICES.includes(choice.toLowerCase())) {
-    prompt("That's not a valid choice.");
+  if (CHOICE_PAIRS[choice]) {
+    choice = CHOICE_PAIRS[choice];
+  }
+
+  while (
+    !CHOICE_KEYS.includes(choice.toLowerCase()) &&
+    !CHOICE_VALUES.includes(choice.toLowerCase())
+  ) {
+    prompt("That's not a valid choice. Hint: 'x' is short for scissors.");
     choice = readline.question();
   }
 
-  let randomIndex = Math.floor(Math.random() * VALID_CHOICES.length);
-  let computerChoice = VALID_CHOICES[randomIndex];
+  let randomIndex = Math.floor(Math.random() * CHOICE_KEYS.length);
+  let computerChoice = CHOICE_VALUES[randomIndex];
 
   displayWinner(choice, computerChoice);
 
