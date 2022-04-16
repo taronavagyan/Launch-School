@@ -23,6 +23,22 @@ function prompt(msg) {
   console.log(`=> ${msg}`);
 }
 
+function returnProcessedChoice(choice) {
+  if (CHOICE_PAIRS[choice]) {
+    choice = CHOICE_PAIRS[choice];
+  }
+
+  while (!CHOICE_VALUES.includes(choice.toLowerCase())) {
+    prompt("That's not a valid choice. Hint: 'x' is short for scissors.");
+    choice = readline.question();
+
+    if (CHOICE_PAIRS[choice]) {
+      choice = CHOICE_PAIRS[choice];
+    }
+  }
+  return choice;
+}
+
 function userWon(choice, computerChoice) {
   return (
     (choice === "rock" &&
@@ -76,21 +92,17 @@ function displayMatchScore() {
 }
 
 console.clear();
+prompt("Welcome to Rock, Paper, Scissors, Lizard, Spock!");
+prompt("Enter ~ any time to exit.");
+console.log("---------------------------------");
+
 while (answer[0] !== "n") {
   prompt(`Choose one: ${CHOICE_VALUES.join(", ")}`);
   let choice = readline.question();
 
-  if (CHOICE_PAIRS[choice]) {
-    choice = CHOICE_PAIRS[choice];
-  }
-
-  while (
-    !CHOICE_KEYS.includes(choice.toLowerCase()) &&
-    !CHOICE_VALUES.includes(choice.toLowerCase())
-  ) {
-    prompt("That's not a valid choice. Hint: 'x' is short for scissors.");
-    choice = readline.question();
-  }
+  if (choice === "~") break;
+  choice = returnProcessedChoice(choice);
+  if (choice === "~") break;
 
   let randomIndex = Math.floor(Math.random() * CHOICE_KEYS.length);
   let computerChoice = CHOICE_VALUES[randomIndex];
@@ -107,5 +119,8 @@ while (answer[0] !== "n") {
       prompt("Please enter 'y' or 'n'");
       answer = readline.question().toLowerCase();
     }
+    userPoints = 0;
+    computerPoints = 0;
+    console.clear();
   }
 }
