@@ -12,6 +12,8 @@ const CHOICE_PAIRS = {
   l: "lizard",
   s: "spock",
 };
+const EXIT_VALUE = "~";
+
 const CHOICE_KEYS = Object.keys(CHOICE_PAIRS);
 const CHOICE_VALUES = Object.values(CHOICE_PAIRS);
 const POINTS_TO_WIN = 5;
@@ -28,7 +30,10 @@ function returnProcessedChoice(choice) {
     choice = CHOICE_PAIRS[choice];
   }
 
-  while (!CHOICE_VALUES.includes(choice.toLowerCase())) {
+  while (
+    !CHOICE_VALUES.includes(choice.toLowerCase()) &&
+    choice !== EXIT_VALUE
+  ) {
     prompt("That's not a valid choice. Hint: 'x' is short for scissors.");
     choice = readline.question();
 
@@ -93,14 +98,13 @@ function displayMatchScore() {
 
 console.clear();
 prompt("Welcome to Rock, Paper, Scissors, Lizard, Spock!");
-prompt("Enter ~ any time to exit.");
+prompt("Enter ~ any time to quit.");
 console.log("---------------------------------");
 
 while (answer[0] !== "n") {
   prompt(`Choose one: ${CHOICE_VALUES.join(", ")}`);
   let choice = readline.question();
 
-  if (choice === "~") break;
   choice = returnProcessedChoice(choice);
   if (choice === "~") break;
 
