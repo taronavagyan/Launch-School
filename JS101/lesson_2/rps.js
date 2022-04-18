@@ -33,6 +33,8 @@
 // THANK YOU in advance. I'm loving LS so far.
 
 const readline = require("readline-sync");
+const EXIT_VALUE = "~";
+
 const CHOICE_PAIRS = {
   r: "rock",
   p: "paper",
@@ -40,10 +42,17 @@ const CHOICE_PAIRS = {
   l: "lizard",
   s: "spock",
 };
-const EXIT_VALUE = "~";
-
 const CHOICE_KEYS = Object.keys(CHOICE_PAIRS);
 const CHOICE_VALUES = Object.values(CHOICE_PAIRS);
+
+const WINNING_COMBOS = {
+  rock: ["scissors", "lizard"],
+  paper: ["rock", "spock"],
+  scissors: ["paper", "lizard"],
+  lizard: ["paper", "spock"],
+  spock: ["rock", "scissors"],
+};
+
 const POINTS_TO_WIN = 5;
 let userPoints = 0;
 let computerPoints = 0;
@@ -73,18 +82,7 @@ function returnProcessedChoice(choice) {
 }
 
 function userWon(choice, computerChoice) {
-  return (
-    (choice === "rock" &&
-      (computerChoice === "scissors" || computerChoice === "lizard")) ||
-    (choice === "scissors" &&
-      (computerChoice === "paper" || computerChoice === "lizard")) ||
-    (choice === "paper" &&
-      (computerChoice === "rock" || computerChoice === "spock")) ||
-    (choice === "lizard" &&
-      (computerChoice === "spock" || computerChoice === "paper")) ||
-    (choice === "spock" &&
-      (computerChoice === "rock" || computerChoice === "scissors"))
-  );
+  return WINNING_COMBOS[choice].includes(computerChoice);
 }
 
 function tallyPoints(choice, computerChoice) {
@@ -134,7 +132,7 @@ while (answer[0] !== "n") {
   let choice = readline.question();
 
   choice = returnProcessedChoice(choice);
-  if (choice === "~") break;
+  if (choice[0] === "~") break;
 
   let randomIndex = Math.floor(Math.random() * CHOICE_KEYS.length);
   let computerChoice = CHOICE_VALUES[randomIndex];
@@ -146,6 +144,8 @@ while (answer[0] !== "n") {
   if (userPoints >= POINTS_TO_WIN || computerPoints >= POINTS_TO_WIN) {
     prompt("Would you like to play again? (y/n)");
     answer = readline.question().toLowerCase();
+
+    if (answer[0] === "~") break;
 
     while (answer[0] !== "y" && answer[0] !== "n") {
       prompt("Please enter 'y' or 'n'");
