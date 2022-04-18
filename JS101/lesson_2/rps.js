@@ -4,6 +4,34 @@
  * display who won/the result
  */
 
+// Q1:
+/*
+ * Is there any preference to while (true) loops over a main() function?
+ */
+// Q2:
+/*
+ * displayGameWinner(choice, computerChoice)
+ * tallyPoints(choice, computerChoice)
+ * displayMatchScore()
+ *
+ * This block of code felt very clunky, especially since I had to pass
+ * the same arguments twice. Is there any way I could refactor it by
+ * encapsulating the three functions into a larger one? Also, is there any
+ * way I could have tallyPoints function properly without any parameters?
+ */
+// Q3:
+/*
+ * I wanted use string interpolation to display the key and value pairs of
+ * CHOICE_PAIRS, but wasn't sure how.
+ *
+ * For example, I wanted to output something like this:
+ * CHOOSE ONE: rock (r), paper (p), scissors (x), lizard (l), spock (s)
+ *
+ * How would I go about this?
+ */
+
+// THANK YOU in advance. I'm loving LS so far.
+
 const readline = require("readline-sync");
 const CHOICE_PAIRS = {
   r: "rock",
@@ -34,7 +62,7 @@ function returnProcessedChoice(choice) {
     !CHOICE_VALUES.includes(choice.toLowerCase()) &&
     choice !== EXIT_VALUE
   ) {
-    prompt("That's not a valid choice. Hint: 'x' is short for scissors.");
+    prompt("That's not a valid choice. Hint: 'x' may be entered for scissors.");
     choice = readline.question();
 
     if (CHOICE_PAIRS[choice]) {
@@ -113,7 +141,7 @@ while (answer[0] !== "n") {
 
   displayGameWinner(choice, computerChoice);
   tallyPoints(choice, computerChoice);
-  displayMatchScore(choice, computerChoice);
+  displayMatchScore();
 
   if (userPoints >= POINTS_TO_WIN || computerPoints >= POINTS_TO_WIN) {
     prompt("Would you like to play again? (y/n)");
