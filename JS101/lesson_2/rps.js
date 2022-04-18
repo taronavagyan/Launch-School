@@ -30,7 +30,7 @@
  * How would I go about this?
  */
 
-// THANK YOU in advance. I'm loving LS so far.
+// Thanks in advance. I'm loving LS so far.
 
 const readline = require("readline-sync");
 const EXIT_VALUE = "~";
