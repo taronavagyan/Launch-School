@@ -22,20 +22,15 @@ crunch(""); // ""
 
 // 2.
 
-/*
 function logInBox(text) {
-  let bars = "";
-  let emptySpace = "";
-  for (let count = 0; count < text.length; count++) {
-    bars = bars.concat("-");
-    emptySpace = emptySpace.concat(" ");
-  }
-  console.log(`+ ${bars} +`);
-  console.log(`| ${emptySpace} |`);
+  let topAndBottom = `+${"-".repeat(text.length + 2)}+`;
+  let emptyLine = `|${" ".repeat(text.length + 2)}|`;
+
+  console.log(topAndBottom);
+  console.log(emptyLine);
   console.log(`| ${text} |`);
-  console.log(`| ${emptySpace} |`);
-  console.log(`+ ${bars} +`);
+  console.log(emptyLine);
+  console.log(topAndBottom);
 }
 
 logInBox("i love to go to 6flags");
-*/
