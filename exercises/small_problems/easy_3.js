@@ -28,29 +28,35 @@ function logInBox(text, maxLength) {
   let length = (text.length + 2) > maxLength ? maxLength : (text.length + 2);
   let topAndBottom = `+${"-".repeat(length)}+`;
   let emptyLine = `|${" ".repeat(length)}|`;
-  if (text.length > maxLength) emptyLine = maxLength;
   let words = text.split(" ");
-  let lineLength = 0;
-  let lineBreaks = [];
-
+  let lines = [];
+  let currentLineLength = 0;
+  let currentLine = "";
   for (let word of words) {
-    if (lineLength + word.length >= maxLength) {
-      lineBreaks.push(word);
-      lineLength = 0;
+    if (currentLineLength + word.length < maxLength - 20) {
+      currentLine += word + " ";
+      currentLineLength += word.length;
     } else {
-      lineLength += word.length;
+      lines.push(currentLine);
+      currentLine = word + " ";
+      currentLineLength = 0;
     }
   }
+
+  lines.push(currentLine);
 
   console.log(topAndBottom);
 
   console.log(emptyLine);
-  console.log(`| ${text} |`);
+  for (let line of lines) {
+    console.log(`| ${line}${" ".repeat(length - line.length - 1)}|`);
+  }
+
   console.log(emptyLine);
   console.log(topAndBottom);
 }
 
 logInBox(
-  "For a challenging but fun exercise, try word wrapping messages that are too long to fit, so that they appear on multiple lines but are still contained within the box. This isn't an easy problem, but it's doable with basic JavaScript",
+  "For a challenging but fun exercise, try word wrapping messages that are too long to fit, so that they appear on multiple lines but are still contained within the box. This isn't an easy problem, but it's doable with basic JavaScript.",
   50
 );
