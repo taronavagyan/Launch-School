@@ -127,7 +127,7 @@ function displayMatchScore() {
   }
 }
 
-//console.clear();
+console.clear();
 prompt("Welcome to Rock, Paper, Scissors, Lizard, Spock!");
 prompt("Enter ~ any time to quit.");
 
