@@ -45,6 +45,10 @@ const CHOICE_PAIRS = {
 const CHOICE_KEYS = Object.keys(CHOICE_PAIRS);
 const CHOICE_VALUES = Object.values(CHOICE_PAIRS);
 
+let choiceArray = CHOICE_KEYS.map(
+  (key, idx) => `${CHOICE_VALUES[idx]} (${key})`
+);
+
 const WINNING_COMBOS = {
   rock: ["scissors", "lizard"],
   paper: ["rock", "spock"],
@@ -63,6 +67,7 @@ function prompt(msg) {
 }
 
 function returnProcessedChoice(choice) {
+  choice = choice.toLowerCase();
   if (CHOICE_PAIRS[choice]) {
     choice = CHOICE_PAIRS[choice];
   }
@@ -72,7 +77,7 @@ function returnProcessedChoice(choice) {
     choice !== EXIT_VALUE
   ) {
     prompt("That's not a valid choice. Hint: 'x' may be entered for scissors.");
-    choice = readline.question();
+    choice = readline.question().toLowerCase();
 
     if (CHOICE_PAIRS[choice]) {
       choice = CHOICE_PAIRS[choice];
@@ -122,13 +127,13 @@ function displayMatchScore() {
   }
 }
 
-console.clear();
+//console.clear();
 prompt("Welcome to Rock, Paper, Scissors, Lizard, Spock!");
 prompt("Enter ~ any time to quit.");
-console.log("---------------------------------");
 
 while (answer[0] !== "n") {
-  prompt(`Choose one: ${CHOICE_VALUES.join(", ")}`);
+  console.log("---------------------------------");
+  prompt(`Choose one: ${choiceArray.join(", ")}`);
   let choice = readline.question();
 
   choice = returnProcessedChoice(choice);
