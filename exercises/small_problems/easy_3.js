@@ -61,7 +61,7 @@ logInBox(
   "For a challenging but fun exercise", 50);
 */
 
-//3
+// 3.
 
 /*
 function stringy(int) {
@@ -74,4 +74,34 @@ function stringy(int) {
 }
 
 console.log(stringy(6));
+*/
+
+// 4.
+
+/*
+function findFibonacciIndexByLength(digits) {
+  let subtractor = BigInt(10n ** (digits - 1n));
+  let fibonacci = 1n;
+  let previousNum = 1n;
+  let numHolder;
+  let idx = 2n;
+
+  while (true) {
+    numHolder = fibonacci;
+    fibonacci += previousNum;
+    previousNum = numHolder;
+    idx += 1n;
+    if (fibonacci - subtractor >= 0) {
+      return BigInt(idx);
+    }
+  }
+}
+
+console.log(findFibonacciIndexByLength(2n));
+console.log(findFibonacciIndexByLength(3n));
+console.log(findFibonacciIndexByLength(10n));
+console.log(findFibonacciIndexByLength(16n));
+console.log(findFibonacciIndexByLength(100n));
+console.log(findFibonacciIndexByLength(1000n));
+console.log(findFibonacciIndexByLength(10000n));
 */
