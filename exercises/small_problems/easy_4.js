@@ -8,6 +8,7 @@ console.log(`Teddy is ${age} years old.`);
 
 // 2.
 
+/*
 const readline = require("readline-sync");
 
 function getNumbersAsArray() {
@@ -31,3 +32,18 @@ if (numsArray.includes(sixthNum)) {
     `The number ${sixthNum} does not appear in ${numsArray.join(",")}.`
   );
 }
+*/
+// 3.
+
+/*
+const readline = require("readline-sync");
+
+let age = readline.question("What is your age? ");
+let retirementAge = readline.question("At what age would you like to retire? ");
+const YEARS_TO_GO = retirementAge - age;
+const CURRENT_YEAR = new Date().getFullYear();
+const RETIREMENT_YEAR = CURRENT_YEAR + YEARS_TO_GO;
+
+console.log(`It's ${CURRENT_YEAR}. You will retire in ${RETIREMENT_YEAR}.`);
+console.log(`You only have ${YEARS_TO_GO} years of work to go!`);
+*/
