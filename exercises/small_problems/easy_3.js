@@ -137,4 +137,22 @@ console.log(
 );
 console.log(`The ${adjective} ${noun} ${verb}s ${adverb} over the lazy dog`);
 console.log(`The ${noun} ${adverb} ${verb}s up ${adjective} Joe's turtle`);
+*/
+
+// 7.
 /*
+function twice(num) {
+  let numAsString = String(num);
+  if (
+    numAsString.length % 2 === 0 &&
+    numAsString.substring(0, numAsString.length / 2) ===
+      numAsString.substring(numAsString.length / 2)
+  ) {
+    return num;
+  }
+
+  return num * 2;
+}
+
+console.log(twice(4444));
+*/
