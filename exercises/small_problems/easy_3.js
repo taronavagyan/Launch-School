@@ -105,3 +105,17 @@ console.log(findFibonacciIndexByLength(100n));
 console.log(findFibonacciIndexByLength(1000n));
 console.log(findFibonacciIndexByLength(10000n));
 */
+
+// 5.
+
+function triangle(height) {
+  let numOfStars = 1;
+
+  console.log();
+  for (numOfStars; numOfStars <= height; numOfStars += 1) {
+    console.log(`${" ".repeat(height - numOfStars)}${"*".repeat(numOfStars)}`);
+  }
+  console.log();
+}
+
+triangle(7);
