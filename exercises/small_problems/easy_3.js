@@ -187,6 +187,7 @@ console.log(getGrade(50, 50, 95)); // "D"
 
 // 9.
 
+/*
 function cleanUp(string) {
   let lettersOfString = string.split("");
 
@@ -204,3 +205,41 @@ function cleanUp(string) {
 }
 
 console.log(cleanUp("---whAt's my +*& line?")); // " what s my line "
+*/
+
+// 10.
+
+/*
+function century(year) {
+  if (year <= 100) {
+    return "1st";
+  }
+
+  let centuryNum = Math.floor((year - 1) / 100);
+  if (centuryNum % 100 > 0) centuryNum += 1;
+
+  if (/1[1-9]$/.test(centuryNum)) {
+    return centuryNum + "th";
+  }
+
+  if (String(centuryNum).endsWith("1")) {
+    return centuryNum + "st";
+  } else if (String(centuryNum).endsWith("2")) {
+    return centuryNum + "nd";
+  } else if (String(centuryNum).endsWith("3")) {
+    return centuryNum + "rd";
+  } else {
+    return centuryNum + "th";
+  }
+}
+
+console.log(century(2000));
+console.log(century(2001));
+console.log(century(1965)); // "20th"
+console.log(century(256)); // "3rd"
+console.log(century(5)); // "1st"
+console.log(century(10103)); // "102nd"
+console.log(century(1052)); // "11th"
+console.log(century(1127)); // "12th"
+console.log(century(11201)); // "113th"
+*/
