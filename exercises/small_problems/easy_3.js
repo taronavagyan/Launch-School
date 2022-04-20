@@ -184,3 +184,23 @@ function getGrade(score1, score2, score3) {
 console.log(getGrade(95, 90, 93)); // "A"
 console.log(getGrade(50, 50, 95)); // "D"
 */
+
+// 9.
+
+function cleanUp(string) {
+  let lettersOfString = string.split("");
+
+  let cleanString = "";
+
+  for (let letter of lettersOfString) {
+    if (/[a-z]/.test(letter)) {
+      cleanString += letter;
+    } else if (!cleanString.endsWith(" ")) {
+      cleanString += " ";
+    }
+  }
+
+  return cleanString;
+}
+
+console.log(cleanUp("---what's my +*& line?")); // " what s my line "
