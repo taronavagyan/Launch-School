@@ -108,6 +108,7 @@ console.log(findFibonacciIndexByLength(10000n));
 
 // 5.
 
+/*
 function triangle(height) {
   let numOfStars = 1;
 
@@ -119,3 +120,21 @@ function triangle(height) {
 }
 
 triangle(7);
+*/
+
+// 6.
+
+/*
+const readline = require("readline-sync");
+
+let noun = readline.question("Enter a noun: ");
+let verb = readline.question("Enter a verb: ");
+let adjective = readline.question("Enter an adjective: ");
+let adverb = readline.question("Enter an adverb: ");
+
+console.log(
+  `Do you ${verb} your ${adjective} ${noun} ${adverb}? That's hilarious!`
+);
+console.log(`The ${adjective} ${noun} ${verb}s ${adverb} over the lazy dog`);
+console.log(`The ${noun} ${adverb} ${verb}s up ${adjective} Joe's turtle`);
+/*
