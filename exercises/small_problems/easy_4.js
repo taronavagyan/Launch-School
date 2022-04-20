@@ -87,17 +87,29 @@ function isRealPalindrome(string) {
   return isPalindromic(cleanedString);
 }
 
-console.log(isRealPalindrome("madam")); // true
 console.log(isRealPalindrome("Madam")); // true
-console.log(isRealPalindrome("Madam, I'm Adam")); // true
-console.log(isRealPalindrome("356653")); // true
-console.log(isRealPalindrome("356a653")); // true
-console.log(isRealPalindrome("123ab321")); // false
+
+// OR
 
 function isRealPalindromic(string) {
   string = string.toLowerCase().replace(/[^a-z0-9]/g, "");
   return isPalindromic(string);
 }
+*/
 
-console.log(isRealPalindromic("race  car"));
+// 6.
+
+/*
+function isPalindromic(string) {
+  return string === string.split("").reverse().join("");
+}
+function isPalindromicNumber(num) {
+  num = String(num).replace(/^0+/, "");
+  console.log(isPalindromic(num));
+}
+
+isPalindromicNumber(34543); // true
+isPalindromicNumber(123210); // false
+isPalindromicNumber(22); // true
+isPalindromicNumber(0050); // true
 */
