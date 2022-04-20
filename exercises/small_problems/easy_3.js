@@ -193,7 +193,7 @@ function cleanUp(string) {
   let cleanString = "";
 
   for (let letter of lettersOfString) {
-    if (/[a-z]/.test(letter)) {
+    if (/[a-z]/i.test(letter)) {
       cleanString += letter;
     } else if (!cleanString.endsWith(" ")) {
       cleanString += " ";
@@ -203,4 +203,4 @@ function cleanUp(string) {
   return cleanString;
 }
 
-console.log(cleanUp("---what's my +*& line?")); // " what s my line "
+console.log(cleanUp("---whAt's my +*& line?")); // " what s my line "
