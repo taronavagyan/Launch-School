@@ -156,3 +156,31 @@ function twice(num) {
 
 console.log(twice(4444));
 */
+
+// 8.
+
+/*
+const GRADES = {
+  1: "F",
+  2: "F",
+  3: "F",
+  4: "F",
+  5: "F",
+  6: "D",
+  7: "C",
+  8: "B",
+  9: "A",
+};
+
+function getGrade(score1, score2, score3) {
+  let meanScore = String((score1 + score2 + score3) / 3);
+
+  if (meanScore === "100") {
+    return "A";
+  }
+  return GRADES[meanScore[0]];
+}
+
+console.log(getGrade(95, 90, 93)); // "A"
+console.log(getGrade(50, 50, 95)); // "D"
+*/
