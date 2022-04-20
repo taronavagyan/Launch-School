@@ -47,3 +47,16 @@ const RETIREMENT_YEAR = CURRENT_YEAR + YEARS_TO_GO;
 console.log(`It's ${CURRENT_YEAR}. You will retire in ${RETIREMENT_YEAR}.`);
 console.log(`You only have ${YEARS_TO_GO} years of work to go!`);
 */
+
+// 4.
+
+/*
+function isPalindromic(string) {
+  return string === string.split("").reverse().join("");
+}
+
+console.log(isPalindromic("madam"));
+console.log(isPalindromic("Madam"));
+console.log(isPalindromic("madam i'm adam"));
+console.log(isPalindromic("356653"));
+*/
