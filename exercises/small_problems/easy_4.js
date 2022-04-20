@@ -60,3 +60,44 @@ console.log(isPalindromic("Madam"));
 console.log(isPalindromic("madam i'm adam"));
 console.log(isPalindromic("356653"));
 */
+
+// 5.
+
+/*
+function cleanUp(string) {
+  let lettersOfString = string.split("");
+
+  let cleanString = "";
+
+  for (let letter of lettersOfString) {
+    if (/[a-z]/i.test(letter)) {
+      cleanString += letter;
+    }
+  }
+
+  return cleanString.toLowerCase();
+}
+
+function isPalindromic(string) {
+  return string === string.split("").reverse().join("");
+}
+
+function isRealPalindrome(string) {
+  let cleanedString = cleanUp(string);
+  return isPalindromic(cleanedString);
+}
+
+console.log(isRealPalindrome("madam")); // true
+console.log(isRealPalindrome("Madam")); // true
+console.log(isRealPalindrome("Madam, I'm Adam")); // true
+console.log(isRealPalindrome("356653")); // true
+console.log(isRealPalindrome("356a653")); // true
+console.log(isRealPalindrome("123ab321")); // false
+
+function isRealPalindromic(string) {
+  string = string.toLowerCase().replace(/[^a-z0-9]/g, "");
+  return isPalindromic(string);
+}
+
+console.log(isRealPalindromic("race  car"));
+*/
