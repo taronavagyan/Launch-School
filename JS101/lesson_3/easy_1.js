@@ -74,3 +74,19 @@ let str2 = "Fred and Wilma have a pet dinosaur named Dino.";
 console.log(includesDino(str1));
 console.log(includesDino(str2));
 */
+
+// 8.
+
+/*
+let flintstones = ["Fred", "Barney", "Wilma", "Betty", "Bambam", "Pebbles"];
+flintstones.push("Dino");
+console.log(flintstones);
+*/
+
+// 9.
+
+/*
+let flintstones = ["Fred", "Barney", "Wilma", "Betty", "Bambam", "Pebbles"];
+flintstones.push("Dino", "Hoppy");
+console.log(flintstones);
+*/
