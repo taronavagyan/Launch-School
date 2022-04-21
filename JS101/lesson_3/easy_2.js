@@ -40,3 +40,15 @@ let number2 = 95; // true
 console.log(numbers.includes(number1));
 console.log(numbers.includes(number2));
 */
+
+// 5.
+
+/*
+let famousWords = "seven years ago...";
+
+console.log(`Four score and ${famousWords}`);
+console.log("Four score and " + famousWords);
+console.log("Four score and ".concat(famousWords));
+*/
+
+// 6.
