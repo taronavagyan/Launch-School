@@ -59,3 +59,18 @@ let additionalAges = { Marilyn: 22, Spot: 237 };
 let munsterfamily = Object.assign(additionalAges, ages);
 console.log(munsterfamily);
 */
+
+// 7.
+
+/*
+function includesDino(string) {
+  return string.includes("Dino");
+}
+
+let str1 =
+  "Few things in life are as important as house training your pet dinosaur.";
+let str2 = "Fred and Wilma have a pet dinosaur named Dino.";
+
+console.log(includesDino(str1));
+console.log(includesDino(str2));
+*/
