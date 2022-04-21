@@ -90,3 +90,16 @@ let flintstones = ["Fred", "Barney", "Wilma", "Betty", "Bambam", "Pebbles"];
 flintstones.push("Dino", "Hoppy");
 console.log(flintstones);
 */
+
+// 10
+
+/*
+let advice =
+  "Few things in life are as important as house training your pet dinosaur.";
+
+// Expected return value:
+// => 'Few things in life are as important as '
+
+let splitByHouse = advice.split("house")[0];
+console.log(splitByHouse);
+*/
