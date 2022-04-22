@@ -73,3 +73,31 @@ let flintstonesFlattened = flintstones.flat();
 
 console.log(flintstonesFlattened);
 */
+
+// 7.
+
+/*
+let flintstones = {
+  Fred: 0,
+  Wilma: 1,
+  Barney: 2,
+  Betty: 3,
+  Bambam: 4,
+  Pebbles: 5,
+};
+let flintstonesPairs = Object.entries(flintstones);
+
+let barneyValue = flintstones["Barney"];
+let barneyArray1 = ["Barney", barneyValue];
+console.log(barneyArray1);
+
+let barneyIndex = flintstonesPairs.flat().indexOf("Barney") / 2;
+let barneyArray2 = flintstonesPairs[barneyIndex];
+
+console.log(barneyArray2);
+
+let barneyArray3 = flintstonesPairs
+  .filter((pair) => pair[0] === "Barney")
+  .shift();
+console.log(barneyArray3);
+*/
