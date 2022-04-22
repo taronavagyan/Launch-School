@@ -29,7 +29,7 @@ console.log(numbersReversed3);
 console.log(numbers);
 */
 
-// 4.
+// 3.
 
 /*
 let numbers = [1, 2, 3, 4, 5, 15, 16, 17, 95, 96, 99];
@@ -41,7 +41,7 @@ console.log(numbers.includes(number1));
 console.log(numbers.includes(number2));
 */
 
-// 5.
+// 4.
 
 /*
 let famousWords = "seven years ago...";
@@ -51,4 +51,13 @@ console.log("Four score and " + famousWords);
 console.log("Four score and ".concat(famousWords));
 */
 
-// 6.
+// 5.
+
+/*
+let arrayOfNums = [1, 2, 3, 4, 5];
+
+// arrayOfNums.splice(2,1)) OR
+arrayOfNums = arrayOfNums.slice(0, 2).concat(arrayOfNums.slice(3));
+
+console.log(arrayOfNums);
+*/
