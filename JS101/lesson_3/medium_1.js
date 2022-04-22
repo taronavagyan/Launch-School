@@ -28,3 +28,23 @@ function swapCasing(text) {
 
 console.log(swapCasing(munstersDescription));
 */
+
+// 3.
+
+/*
+function factors(number) {
+  let divisor = number;
+  let factors = [];
+  while (divisor > 0) {
+    if (number % divisor === 0) {
+      factors.push(number / divisor);
+    }
+    divisor -= 1;
+  }
+  return factors;
+}
+
+console.log(factors(-5));
+
+// number % divisor === 0 returns true if divisor is a factor of number
+*/
