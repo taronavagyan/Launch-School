@@ -3,14 +3,21 @@
 /*
 let numbers = [1, 2, 3, 4];
 
-/* numbers = []; */
+numbers = []; /
 
-/*
+
 while (numbers.length) {
   numbers.pop();
 }
+
+
+numbers.splice(0);
+
 */
 
-/* numbers.splice(0); */
-console.log(numbers);
-*/
+// 2.
+
+/*
+First the arrays are converted to strings, then
+concatenated.
+ */
