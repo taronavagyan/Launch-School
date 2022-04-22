@@ -21,3 +21,16 @@ numbers.splice(0);
 First the arrays are converted to strings, then
 concatenated.
  */
+
+// 3.
+
+/* "hello there" because strings are primitives */
+
+// 4.
+
+/*
+
+[ { first: 42 }, { second: "value2" }, 3, 4, 5 ]
+
+Because splice() returns a shallow copy.
+*/
