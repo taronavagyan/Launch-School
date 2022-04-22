@@ -111,3 +111,13 @@ let table = { field1: 1, field2: 2, field3: 3, field4: 4 }; // false
 console.log(Array.isArray(numbers));
 console.log(Array.isArray(table));
 */
+
+// 9.
+
+/*
+const TABLE_WIDTH = 40;
+let title = "Flintstone Family Members";
+const PADDING = Math.floor(TABLE_WIDTH - title.length) / 2;
+
+console.log(title.padStart(PADDING + title.length));
+*/
