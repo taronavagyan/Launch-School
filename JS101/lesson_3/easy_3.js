@@ -34,3 +34,17 @@ concatenated.
 
 Because splice() returns a shallow copy.
 */
+
+// 5.
+
+/*
+function isColorValid1(color) {
+  return color === "blue" || color === "green";
+}
+
+function isColorValid2(color) {
+  return color === "blue" || color === "green" ? 1 : 0;
+}
+
+const isColorValid3 = (color) => ["blue", "green"].includes(color);
+*/
