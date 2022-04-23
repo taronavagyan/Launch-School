@@ -82,3 +82,9 @@ Number.isNaN() can be used to verify is a value is NaN.
 */
 
 // 7.
+
+/* 34 */
+
+// 8.
+
+/* Yes, because objects are pass-by-reference. */
