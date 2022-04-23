@@ -59,3 +59,26 @@ merge the two arrays.
 Also, push will mutate the argument represented by buffer, while
 concat will not.
 */
+
+// 5.
+
+/*
+
+console.log(0.3 + 0.6); // 0.8999999999999999
+
+console.log(0.3 + 0.6 === 0.9); // false
+
+JavaScript uses floating point numbers for all numeric operations.
+Most floating point representations used on computers lack a certain
+amount of precision, and that can yield unexpected results like these.
+
+*/
+
+// 6.
+
+/*
+False because NaN is not equivalent to itself.
+Number.isNaN() can be used to verify is a value is NaN.
+*/
+
+// 7.
