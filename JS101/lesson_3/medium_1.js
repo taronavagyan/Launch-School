@@ -48,3 +48,14 @@ console.log(factors(-5));
 
 // number % divisor === 0 returns true if divisor is a factor of number
 */
+
+// 4.
+
+/*
+Yes, if an array is passed for the newElement parameter, then
+push will add the array as an element, while concat will
+merge the two arrays.
+
+Also, push will mutate the argument represented by buffer, while
+concat will not.
+*/
