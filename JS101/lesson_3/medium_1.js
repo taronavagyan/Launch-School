@@ -88,3 +88,11 @@ Number.isNaN() can be used to verify is a value is NaN.
 // 8.
 
 /* Yes, because objects are pass-by-reference. */
+
+// 9.
+
+/* "paper" */
+
+// 10.
+
+/* no */
