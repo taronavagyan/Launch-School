@@ -93,3 +93,19 @@ findDup([
   40, 23, 71, 62, 73, 32, 43, 24, 4, 56, 7, 34, 57, 74, 45, 11, 88, 67, 5, 58,
 ]); // 73
 */
+
+// 5.
+
+/*
+function interweave(array1, array2) {
+  let resultArray = [];
+
+  for (let idx = 0; idx < array1.length; idx += 1) {
+    result.push(array1[idx], array2[idx]);
+  }
+
+  return resultArray;
+}
+
+console.log(interweave([1, 2, 3], ["a", "b", "c"])); // [1, "a", 2, "b", 3, "c"]
+*/
