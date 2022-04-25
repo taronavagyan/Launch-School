@@ -140,3 +140,23 @@ function multiplyList(array1, array2) {
 
 console.log(multiplyList([3, 5, 7], [9, 10, 11])); // [27, 50, 77]
 */
+
+// 8.
+
+/*
+function digitList(number) {
+  let digitsList = [];
+  while (number) {
+    let digit = number % 10;
+    digitsList.unshift(digit);
+    number = (number - digit) / 10;
+  }
+
+  return digitsList;
+}
+
+digitList(12345);       // [1, 2, 3, 4, 5]
+digitList(7);           // [7]
+digitList(375290);      // [3, 7, 5, 2, 9, 0]
+digitList(444);         // [4, 4, 4]
+*/
