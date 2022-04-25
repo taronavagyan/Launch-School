@@ -109,3 +109,19 @@ function interweave(array1, array2) {
 
 console.log(interweave([1, 2, 3], ["a", "b", "c"])); // [1, "a", 2, "b", 3, "c"]
 */
+
+// 6.
+
+/*
+function multiplicativeAverage(arrayOfInts) {
+  return (
+    arrayOfInts.reduce(
+      (runningCount, currentInt) => runningCount * currentInt,
+      1
+    ) / arrayOfInts.length
+  ).toFixed(3);
+}
+
+console.log(multiplicativeAverage([3, 5]));
+console.log(multiplicativeAverage([2, 5, 7, 11, 13, 17]));
+*/
