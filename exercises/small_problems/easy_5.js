@@ -52,3 +52,21 @@ function uniqueValuesOnly(array) {
 
 console.log(union([1, 3, 5], [3, 6, 9])); // [1, 3, 5, 6, 9]
 */
+
+// 3.
+
+/*
+function halvsies(array) {
+  let arrayHalves = [];
+  let half = Math.ceil(array.length / 2);
+  let firstHalf = array.slice(0, half);
+  let secondHalf = array.slice(half);
+  arrayHalves.push(firstHalf, secondHalf);
+  return arrayHalves;
+}
+
+console.log(halvsies([1, 2, 3, 4])); // [[1, 2], [3, 4]]
+console.log(halvsies([1, 5, 2, 4, 3])); // [[1, 5, 2], [4, 3]]
+console.log(halvsies([5])); // [[5], []]
+console.log(halvsies([])); // [[], []]
+*/
