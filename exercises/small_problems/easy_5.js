@@ -1,14 +1,16 @@
 // 1.
 
 /*
+
+const SINGLE_UNIT = 1;
 const DEGREE = "\xB0";
 const MINUTES_PER_DEGREE = 60;
 const SECONDS_PER_MINUTE = 60;
 
 function dms(number) {
   let degrees = Math.floor(number / 1);
-  let minutes = (number % 1) * MINUTES_PER_DEGREE;
-  let seconds = (minutes % 1) * SECONDS_PER_MINUTE;
+  let minutes = (number % SINGLE_UNIT) * MINUTES_PER_DEGREE;
+  let seconds = (minutes % SINGLE_UNIT) * SECONDS_PER_MINUTE;
 
   minutes = padZeros(minutes);
   seconds = padZeros(seconds);
@@ -27,4 +29,26 @@ dms(254.6); // 254°35'59"
 dms(93.034773); // 93°02'05"
 dms(0); // 0°00'00"
 dms(360); // 360°00'00" or 0°00'00"
+*/
+
+// 2.
+
+/*
+function union(array1, array2) {
+  let jointArray = array1.concat(array2);
+
+  return uniqueValuesOnly(jointArray);
+}
+
+function uniqueValuesOnly(array) {
+  let result = [];
+  for (let value of array) {
+    if (result.indexOf(value) === -1) {
+      result.push(value);
+    }
+  }
+  return result;
+}
+
+console.log(union([1, 3, 5], [3, 6, 9])); // [1, 3, 5, 6, 9]
 */
