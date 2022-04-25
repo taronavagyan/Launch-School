@@ -182,3 +182,38 @@ wordSizes("Hey diddle diddle, the cat and the fiddle!"); // { "3": 5, "6": 3 }
 wordSizes("What's up doc?"); // { "2": 1, "3": 1, "5": 1 }
 wordSizes(""); // {}
 */
+
+// 10.
+
+/*
+function swap(string) {
+  if (string.length === 1) return string;
+  let result = "";
+
+  let words = string.split(" ");
+  for (let word of words) {
+    if (word.length === 1) {
+      result += word + " ";
+      continue;
+    }
+
+    let swappedWord = swapFirstAndLastLetters(word);
+
+    result += swappedWord + " ";
+  }
+  return result;
+}
+
+function swapFirstAndLastLetters(word) {
+  let firstLetter = word[0];
+  let lastLetter = word[word.length - 1];
+
+  let swappedWord =
+    lastLetter + word.substring(1, word.length - 1) + firstLetter;
+
+  return swappedWord;
+}
+console.log(swap("Oh what a wonderful day it is")); // "hO thaw a londerfuw yad ti si"
+console.log(swap("Abcde")); // "ebcdA"
+console.log(swap("a")); // "a"
+*/
