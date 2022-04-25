@@ -160,3 +160,38 @@ digitList(7);           // [7]
 digitList(375290);      // [3, 7, 5, 2, 9, 0]
 digitList(444);         // [4, 4, 4]
 */
+
+// 9.
+
+/*
+let vehicles = [
+  "car",
+  "car",
+  "truck",
+  "car",
+  "SUV",
+  "truck",
+  "motorcycle",
+  "motorcycle",
+  "car",
+  "truck",
+];
+
+function countOccurrences(array) {
+  let count = {};
+
+  for (let value of array) {
+    count[value] = count[value] || 0;
+    count[value] += 1;
+  }
+
+  logOccurences(count);
+}
+
+function logOccurences(occurences) {
+  for (let key in occurences) {
+    console.log(`${key} => ${occurences[key]}`);
+  }
+}
+countOccurrences(vehicles);
+*/
