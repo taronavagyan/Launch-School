@@ -127,3 +127,33 @@ console.log(runningTotal([14, 11, 7, 15, 20])); // [14, 25, 32, 47, 67]
 console.log(runningTotal([3])); // [3]
 console.log(runningTotal([])); // []
 */
+
+// 8.
+
+/*
+function wordSizes(string) {
+  let words = string.split(" ");
+  let currLength;
+  let occurences;
+  let wordSizes = {};
+
+  if (string === "") {
+    return {};
+  }
+
+  for (let idx = 0; idx < words.length; idx += 1) {
+    currLength = words[idx].length;
+    // eslint-disable-next-line no-loop-func
+    occurences = words.filter((word) => word.length === currLength).length;
+    if (!wordSizes[currLength]) {
+      wordSizes[currLength] = occurences;
+    }
+  }
+  return wordSizes;
+}
+
+console.log(wordSizes("four sore and seven"));
+console.log(wordSizes("Hey diddle diddle, the cat and the fiddle!"));
+console.log(wordSizes("What's up doc?"));
+console.log(wordSizes(""));
+*/
