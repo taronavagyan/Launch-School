@@ -1,5 +1,7 @@
 // 1.
 
+const { _DBG_set_checkOptions } = require("readline-sync");
+
 /*
 let age = Math.round(Math.random() * 100) + 20;
 
@@ -133,27 +135,50 @@ console.log(runningTotal([])); // []
 /*
 function wordSizes(string) {
   let words = string.split(" ");
+  let count = {};
   let currLength;
-  let occurences;
-  let wordSizes = {};
-
-  if (string === "") {
-    return {};
-  }
 
   for (let idx = 0; idx < words.length; idx += 1) {
     currLength = words[idx].length;
-    // eslint-disable-next-line no-loop-func
-    occurences = words.filter((word) => word.length === currLength).length;
-    if (!wordSizes[currLength]) {
-      wordSizes[currLength] = occurences;
+    if (currLength === 0) {
+      continue;
     }
+
+    if (!count[currLength]) {
+      count[currLength] = 0;
+    }
+    count[currLength] += 1;
   }
-  return wordSizes;
 }
 
 console.log(wordSizes("four sore and seven"));
 console.log(wordSizes("Hey diddle diddle, the cat and the fiddle!"));
 console.log(wordSizes("What's up doc?"));
 console.log(wordSizes(""));
+*/
+
+// 9.
+
+/*
+function wordSizes(string) {
+  let words = string.replace(/[^a-zA-z ]/g, "").split(" ");
+  let count = {};
+  let currLength;
+
+  for (let idx = 0; idx < words.length; idx += 1) {
+    currLength = words[idx].length;
+    if (currLength === 0) continue;
+
+    if (!count[currLength]) {
+      count[currLength] = 0;
+    }
+    count[currLength] += 1;
+  }
+  return count;
+}
+
+wordSizes("Four score and seven."); // { "3": 1, "4": 1, "5": 2 }
+wordSizes("Hey diddle diddle, the cat and the fiddle!"); // { "3": 5, "6": 3 }
+wordSizes("What's up doc?"); // { "2": 1, "3": 1, "5": 1 }
+wordSizes(""); // {}
 */
