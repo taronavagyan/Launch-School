@@ -125,3 +125,18 @@ function multiplicativeAverage(arrayOfInts) {
 console.log(multiplicativeAverage([3, 5]));
 console.log(multiplicativeAverage([2, 5, 7, 11, 13, 17]));
 */
+
+// 7.
+
+/*
+function multiplyList(array1, array2) {
+  let newArray = [];
+
+  for (let idx = 0; idx < array1.length; idx += 1) {
+    newArray.push(array1[idx] * array2[idx]);
+  }
+  return newArray;
+}
+
+console.log(multiplyList([3, 5, 7], [9, 10, 11])); // [27, 50, 77]
+*/
