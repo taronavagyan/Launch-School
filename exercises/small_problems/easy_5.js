@@ -251,3 +251,11 @@ console.log(timeOfDay(3000) === "02:00");
 console.log(timeOfDay(800) === "13:20");
 console.log(timeOfDay(-4231) === "01:29");
 */
+
+// 12.
+
+//GET time as string in "hh:mm" format
+//split into array by ":"
+//convert hours to minutes and add to minutes
+//remove excess cycles
+//return DAY_IN_MINUTES - Math.abs(minutes)
