@@ -212,11 +212,6 @@ console.log(average([9, 47, 23, 95, 16, 52]));
 // 11.
 
 /*
-// get minutes before/after midnight
-// calculate time of day in minutes
-// convert to "hh:mm" format
-// return string
-
 const MINUTES_PER_HOUR = 60;
 const HOURS_PER_DAY = 24;
 const DAY_IN_MINUTES = MINUTES_PER_HOUR * HOURS_PER_DAY;
