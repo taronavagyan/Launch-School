@@ -208,3 +208,51 @@ const average = (arrayOfInts) =>
 console.log(average([1, 5, 87, 45, 8, 8]));
 console.log(average([9, 47, 23, 95, 16, 52]));
 */
+
+// 11.
+
+/*
+// get minutes before/after midnight
+// calculate time of day in minutes
+// convert to "hh:mm" format
+// return string
+
+const MINUTES_PER_HOUR = 60;
+const HOURS_PER_DAY = 24;
+const DAY_IN_MINUTES = MINUTES_PER_HOUR * HOURS_PER_DAY;
+
+function timeOfDay(minutesSinceMidnight) {
+  let timeInMinutes = removeExtraCycles(minutesSinceMidnight);
+
+  if (timeInMinutes < 0) {
+    timeInMinutes += DAY_IN_MINUTES;
+  }
+
+  let minutes = padZeros(timeInMinutes % MINUTES_PER_HOUR);
+  let hours = padZeros(Math.floor(timeInMinutes / MINUTES_PER_HOUR));
+  return `${hours}:${minutes}`;
+}
+
+function removeExtraCycles(minutes) {
+  let charge = minutes > 0 ? 1 : -1;
+  minutes *= charge;
+  while (minutes - DAY_IN_MINUTES >= 0) {
+    minutes -= DAY_IN_MINUTES;
+  }
+
+  minutes *= charge;
+  return minutes;
+}
+
+function padZeros(number) {
+  return String(number).length === 1 ? "0" + number : number;
+}
+
+console.log(timeOfDay(0) === "00:00");
+console.log(timeOfDay(-3) === "23:57");
+console.log(timeOfDay(35) === "00:35");
+console.log(timeOfDay(-1437) === "00:03");
+console.log(timeOfDay(3000) === "02:00");
+console.log(timeOfDay(800) === "13:20");
+console.log(timeOfDay(-4231) === "01:29");
+*/
