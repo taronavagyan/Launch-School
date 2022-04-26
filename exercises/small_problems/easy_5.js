@@ -254,8 +254,35 @@ console.log(timeOfDay(-4231) === "01:29");
 
 // 12.
 
+/*
 //GET time as string in "hh:mm" format
 //split into array by ":"
 //convert hours to minutes and add to minutes
 //remove excess cycles
 //return DAY_IN_MINUTES - Math.abs(minutes)
+
+const MINUTES_PER_HOUR = 60;
+const HOURS_PER_DAY = 24;
+const DAY_IN_MINUTES = MINUTES_PER_HOUR * HOURS_PER_DAY;
+
+function afterMidnight(time) {
+  let hrsAndMins = time.split(":");
+  //prettier-ignore
+  let totalMins = (hrsAndMins[0] * MINUTES_PER_HOUR) + Number(hrsAndMins[1]);
+  return totalMins % DAY_IN_MINUTES;
+}
+
+function beforeMidnight(time) {
+  let hrsAndMins = time.split(":");
+  //prettier-ignore
+  let totalMins = (hrsAndMins[0] * MINUTES_PER_HOUR) + Number(hrsAndMins[1]);
+  return (DAY_IN_MINUTES - totalMins) % DAY_IN_MINUTES;
+}
+
+console.log(afterMidnight("00:00") === 0);
+console.log(beforeMidnight("00:00") === 0);
+console.log(afterMidnight("12:34") === 754);
+console.log(beforeMidnight("12:34") === 686);
+console.log(afterMidnight("24:00") === 0);
+console.log(beforeMidnight("24:00") === 0);
+*/
