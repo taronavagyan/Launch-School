@@ -117,3 +117,20 @@ function swapName(fullname) {
 
 console.log(swapName("Joe Roberts")); // "Roberts, Joe"
 */
+
+// 8.
+
+/*
+function sequence(count, num) {
+  let sequenceArray = [];
+  for (let times = 1; times <= count; times += 1) {
+    sequenceArray.push(num * times);
+  }
+  return sequenceArray;
+}
+
+console.log(sequence(5, 1));
+console.log(sequence(4, -7));
+console.log(sequence(3, 0));
+console.log(sequence(0, 100));
+*/
