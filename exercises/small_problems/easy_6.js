@@ -88,3 +88,21 @@ console.log(returnNegative(-5));
 console.log(returnNegative(0));
 console.log(returnNegative(-0));
 */
+
+// 6.
+
+/*
+function sequence(max) {
+  let sequenceArray = [];
+
+  for (let count = 1; count <= max; count += 1) {
+    sequenceArray.push(count);
+  }
+  return sequenceArray;
+}
+
+console.log(sequence(5));
+console.log(sequence(3));
+console.log(sequence(1));
+console.log(sequence(10));
+*/
