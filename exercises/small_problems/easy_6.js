@@ -106,3 +106,14 @@ console.log(sequence(3));
 console.log(sequence(1));
 console.log(sequence(10));
 */
+
+// 7.
+
+/*
+function swapName(fullname) {
+  let names = fullname.split(" ");
+  return names[1] + ", " + names[0];
+}
+
+console.log(swapName("Joe Roberts")); // "Roberts, Joe"
+*/
