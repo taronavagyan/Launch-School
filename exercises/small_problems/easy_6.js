@@ -73,3 +73,18 @@ console.log(centerOf("Launch")); // "un"
 console.log(centerOf("Launchschool")); // "hs"
 console.log(centerOf("x")); // "x"
 */
+
+// 5.
+
+/*
+function returnNegative(number) {
+  let positivity = number >= 0 ? 1 : -1;
+  let numberPositive = number * positivity;
+
+  return Number("-" + numberPositive);
+}
+console.log(returnNegative(5));
+console.log(returnNegative(-5));
+console.log(returnNegative(0));
+console.log(returnNegative(-0));
+*/
