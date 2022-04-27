@@ -34,3 +34,22 @@ console.log(doubleConsonants("Hello-World!"));
 console.log(doubleConsonants("July 4th"));
 console.log(doubleConsonants(""));
 */
+
+// 3.
+
+/*
+function reverseNumber(number) {
+  let reversedNum = String(number).split("").reverse();
+  while (reversedNum[0] === "0") {
+    reversedNum.shift();
+  }
+
+  return reversedNum.join("");
+}
+
+console.log(reverseNumber(12345));
+console.log(reverseNumber(12213));
+console.log(reverseNumber(456));
+console.log(reverseNumber(12000));
+console.log(reverseNumber(1));
+*/
