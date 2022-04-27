@@ -53,3 +53,23 @@ console.log(reverseNumber(456));
 console.log(reverseNumber(12000));
 console.log(reverseNumber(1));
 */
+
+// 4.
+
+/*
+function centerOf(string) {
+  let indexOfCenter = Math.floor(string.length / 2);
+  return isOdd(string)
+    ? string[indexOfCenter]
+    : string[indexOfCenter - 1] + string[indexOfCenter];
+}
+
+function isOdd(string) {
+  return string.length % 2 === 1;
+}
+console.log(centerOf("I Love JavaScript")); // "a"
+console.log(centerOf("Launch School")); // " "
+console.log(centerOf("Launch")); // "un"
+console.log(centerOf("Launchschool")); // "hs"
+console.log(centerOf("x")); // "x"
+*/
