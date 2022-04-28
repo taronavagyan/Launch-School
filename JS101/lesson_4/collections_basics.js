@@ -7,7 +7,7 @@ let arr = ["a", "b", "c", "d", "e", "f", "g"];
 console.log(arr.slice(2, 5)[0]);
 
 arr.join("");
-*/
+
 
 let numbers = [1, 2, 3, 4];
 numbers[0] += 1; // => 2
@@ -29,3 +29,43 @@ obj.carrot = "Vegetable";
 obj.pear = "Fruit";
 obj["broccoli"] = "Vegetable";
 console.log(obj);
+
+console.log("One potato, two potato, three potato, four".split(","));
+
+
+while (true) {
+  let number = Math.floor(10 * Math.random());
+  console.log(number);
+
+  if (number === 5) {
+    console.log("Exiting...");
+    break;
+  }
+}
+
+
+let colors = ["green", "blue", "purple", "orange"];
+
+for (let counter = 0; counter < colors.length; counter += 1) {
+  console.log(`I'm the color ${colors[counter]}!`);
+}
+
+
+let mixed = ["hello", 10, undefined];
+
+for (let counter = 0; counter < mixed.length; counter += 1) {
+  console.log(typeof mixed[counter]);
+}
+
+let numberOfPets = {
+  dogs: 2,
+  cats: 4,
+  fish: 1
+};
+
+for (let currentPet in numberOfPets) {
+  let currentPetNumber = numberOfPets[currentPet];
+  console.log(`I have ${currentPetNumber} ${currentPet}!`);
+}
+
+*/
