@@ -36,22 +36,26 @@
 //
 
 // Algorithm:
-//  - declare a result variable and initialize it to an empty array
-//  - create an array named substrArray that contains all of the
-//    substrings of the input string that are at least 2 characters long.
-// Above step (cont.)
-/*
-for each starting index from 0 through the next to last index position
-  for each substring length from 2 until there are no substrings of that length
-    extract the substring of the indicated length starting at the indicated index position
-  end of inner loop
-end of outer loop
-*/
-
-//  - loop through the words in the substrArray array.
-//  - if the word is a palindrome, append it to the result
-//    array
-//  - return the result array
+// START
+//
+//   /* Given a string named `string` */
+//
+//   SET result = []
+//   SET startingIndex = 0
+//
+//   WHILE startingIndex <= length of string - 2
+//     SET numChars = 2
+//     WHILE numChars <= length of string - startingIndex
+//       SET substring = numChars characters from string starting at
+//       index startingIndex
+//       append substring to result array
+//       SET numChars = numChars + 1
+//
+//     SET startingIndex = startingIndex + 1
+//
+//   RETURN result
+//
+// END
 
 function palindromeSubstrings(str) {
   let result = [];
@@ -62,6 +66,24 @@ function palindromeSubstrings(str) {
       result.push(substring);
     }
   });
+
+  return result;
+}
+
+function substrings(str) {
+  let result = [];
+  let startingIndex = 0;
+
+  while (startingIndex <= str.length - 2) {
+    let numChars = 2;
+    while (numChars <= str.length - startingIndex) {
+      let substring = str.slice(startingIndex, startingIndex + numChars);
+      result.push(substring);
+      numChars += 1;
+    }
+
+    startingIndex += 1;
+  }
 
   return result;
 }
