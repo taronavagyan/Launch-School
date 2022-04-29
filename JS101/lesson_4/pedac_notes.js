@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 // PROBLEM:
 
 // Given a string, write a function `palindromeSubstrings` which returns
@@ -18,57 +19,40 @@
 // console.log(palindromeSubstrings(""))
 // should log: []
 
-////////
-
-// Understand the Problem:
-// what if input isn't a string?
-
-// input: string
-// output: array of substring palindromes
-
-// rules:
-//   explicit: return all substring palindromes
-//             case sensitive
-//             function called palindromeSubstrings
-
-//   implicit: return in an array
-//             empty string returns empty array
-//
+// input: a string
+// output: an array of substrings
+// rules: palindrome words should be case sensitive, meaning "abBA"
+//        is not a palindrome
 
 // Algorithm:
-// START
-//
-//   /* Given a string named `string` */
-//
-//   SET result = []
-//   SET startingIndex = 0
-//
-//   WHILE startingIndex <= length of string - 2
-//     SET numChars = 2
-//     WHILE numChars <= length of string - startingIndex
-//       SET substring = numChars characters from string starting at
-//       index startingIndex
-//       append substring to result array
-//       SET numChars = numChars + 1
-//
-//     SET startingIndex = startingIndex + 1
-//
-//   RETURN result
-//
-// END
+//  substrings function
+//  =================
+//    - create an empty array called `result` that will contain all required substrings
+//    - create a `startingIndex` variable (value `0`) for the starting index of a substring
+//    - start a loop that uses `startingIndex` to iterate over `string` from `0` to the length of the string minus 2
+//      - create a `numChars` variable (value `2`) for the length of a substring
+//      - start an inner loop that uses `numChars` to iterate over `string` from `2` to `string.length - startingIndex`
+//        - extract a substring of length `numChars` from `string` starting at `startingIndex`
+//        - append the extracted substring to the `result` array
+//        - increment the `numChars` variable by `1`
+//      - end the inner loop
+//      - increment the `startingIndex` variable by `1`
+//    - end the outer loop
+//    - return the `result` array
 
-function palindromeSubstrings(str) {
-  let result = [];
-  let substringsArr = substrings(str);
+//  isPalindrome function
+//  =====================
+//    - Inside the `isPalindrome` function, check whether the string
+//      value is equal to its reversed value.
 
-  substringsArr.forEach((substring) => {
-    if (isPalindrome(substring)) {
-      result.push(substring);
-    }
-  });
-
-  return result;
-}
+//  palindromeSubstrings function
+//  ============================
+//    - declare a `result` variable and initialize it to an empty array
+//    - create an array named `substrArray` that will contain all of the
+//      substrings of the input string that are at least 2 characters long.
+//    - loop through the words in the `substrArray` array.
+//      - if the word is a palindrome, append it to the `result` array
+//    - return the `result` array
 
 function substrings(str) {
   let result = [];
@@ -87,3 +71,25 @@ function substrings(str) {
 
   return result;
 }
+
+function isPalindrome(str) {
+  return str === str.split("").reverse().join("");
+}
+
+function palindromeSubstrings(str) {
+  let result = [];
+  let substringsArr = substrings(str);
+
+  substringsArr.forEach((substring) => {
+    if (isPalindrome(substring)) {
+      result.push(substring);
+    }
+  });
+
+  return result;
+}
+
+console.log(palindromeSubstrings("supercalifragilisticexpialidocious")); // ["ili"]
+console.log(palindromeSubstrings("abcddcbA")); // ["bcddcb", "cddc", "dd"]
+console.log(palindromeSubstrings("palindrome")); // []
+console.log(palindromeSubstrings("")); // []
