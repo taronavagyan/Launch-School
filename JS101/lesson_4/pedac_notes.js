@@ -39,6 +39,15 @@
 //  - declare a result variable and initialize it to an empty array
 //  - create an array named substrArray that contains all of the
 //    substrings of the input string that are at least 2 characters long.
+// Above step (cont.)
+/*
+for each starting index from 0 through the next to last index position
+  for each substring length from 2 until there are no substrings of that length
+    extract the substring of the indicated length starting at the indicated index position
+  end of inner loop
+end of outer loop
+*/
+
 //  - loop through the words in the substrArray array.
 //  - if the word is a palindrome, append it to the result
 //    array
