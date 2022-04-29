@@ -20,6 +20,7 @@
 
 ////////
 
+// Understand the Problem:
 // what if input isn't a string?
 
 // input: string
@@ -33,3 +34,25 @@
 //   implicit: return in an array
 //             empty string returns empty array
 //
+
+// Algorithm:
+//  - declare a result variable and initialize it to an empty array
+//  - create an array named substrArray that contains all of the
+//    substrings of the input string that are at least 2 characters long.
+//  - loop through the words in the substrArray array.
+//  - if the word is a palindrome, append it to the result
+//    array
+//  - return the result array
+
+function palindromeSubstrings(str) {
+  let result = [];
+  let substringsArr = substrings(str);
+
+  substringsArr.forEach((substring) => {
+    if (isPalindrome(substring)) {
+      result.push(substring);
+    }
+  });
+
+  return result;
+}
