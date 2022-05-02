@@ -5,8 +5,6 @@ let produce = {
   broccoli: "Vegetable",
 };
 
-selectFruit(produce); // => { apple: 'Fruit', pear: 'Fruit' }
-
 function selectFruit(produceList) {
   let fruits = {};
 
@@ -19,4 +17,5 @@ function selectFruit(produceList) {
   return fruits;
 }
 
-console.log(selectFruit(produce));
+console.log(selectFruit(produce)); // => { apple: 'Fruit', pear: 'Fruit' }
+console.log(produce);
