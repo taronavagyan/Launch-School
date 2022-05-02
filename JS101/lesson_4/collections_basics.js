@@ -68,8 +68,6 @@ for (let currentPet in numberOfPets) {
   console.log(`I have ${currentPetNumber} ${currentPet}!`);
 }
 
-
-
 let arr = [2, 4, 6];
 arr.length = 5;
 arr[4] = undefined;
