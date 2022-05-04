@@ -23,3 +23,9 @@ Because there are no brackets surrounding the arrow function
 /*
 11, because that's the length of 'caterpillar'
 */
+
+// 5.
+
+/*
+2, 4, 6, true
+*/
