@@ -44,3 +44,20 @@ It is destructive (MDN).
 */
 
 // 8.
+
+/*
+let flintstones = ["Fred", "Barney", "Wilma", "Betty", "Pebbles", "Bambam"];
+let flintstonesObj = {};
+
+for (let member of flintstones) {
+  flintstonesObj[member] = flintstones.indexOf(member);
+}
+
+// OR
+
+flintstones.forEach((name, idx) => {
+  flintstonesObj[name] = idx;
+});
+
+console.log(flintstonesObj);
+*/
