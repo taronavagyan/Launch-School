@@ -36,3 +36,11 @@ Because there are no brackets surrounding the arrow function
 [ 1, 1, 1, 1, 1 ]
 It is destructive (MDN).
 */
+
+// 7.
+
+/*
+[ undefined, 'bear' ]
+*/
+
+// 8.
