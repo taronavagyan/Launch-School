@@ -80,3 +80,29 @@ let agesArray = Object.values(ages);
 agesArray.forEach((age) => (totalAge += age));
 console.log(totalAge);
 */
+
+// 10.
+
+/*
+let ages = {
+  Herman: 32,
+  Lily: 30,
+  Grandpa: 5843,
+  Eddie: 10,
+  Marilyn: 22,
+  Spot: 237,
+};
+
+let agesArray = Object.values(ages);
+let youngest = agesArray[0];
+
+for (let currAge of agesArray) {
+  youngest = currAge < youngest ? currAge : youngest;
+}
+
+console.log(youngest);
+
+// OR
+console.log(Math.min(...agesArray));
+
+*/
