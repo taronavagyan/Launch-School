@@ -61,3 +61,22 @@ flintstones.forEach((name, idx) => {
 
 console.log(flintstonesObj);
 */
+
+// 9.
+
+/*
+let ages = {
+  Herman: 32,
+  Lily: 30,
+  Grandpa: 5843,
+  Eddie: 10,
+  Marilyn: 22,
+  Spot: 237,
+};
+
+let totalAge = 0;
+let agesArray = Object.values(ages);
+
+agesArray.forEach((age) => (totalAge += age));
+console.log(totalAge);
+*/
