@@ -17,3 +17,9 @@ Because there are brackets, but no return statement.
 [ 1, 4, 9 ]
 Because there are no brackets surrounding the arrow function
 */
+
+// 4.
+
+/*
+11, because that's the length of 'caterpillar'
+*/
