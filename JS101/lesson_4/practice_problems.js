@@ -106,3 +106,20 @@ console.log(youngest);
 console.log(Math.min(...agesArray));
 
 */
+
+// 11.
+
+/*
+let charsOfStatement = "The Flintstones Rock"
+  .split("")
+  .filter((char) => char !== " ");
+
+let charOccurences = {};
+
+charsOfStatement.forEach((char) => {
+  charOccurences[char] = charOccurences[char] || 0;
+  charOccurences[char] += 1;
+});
+
+console.log(charOccurences);
+*/
