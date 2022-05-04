@@ -29,3 +29,10 @@ Because there are no brackets surrounding the arrow function
 /*
 2, 4, 6, true
 */
+
+// 6.
+
+/*
+[ 1, 1, 1, 1, 1 ]
+It is destructive (MDN).
+*/
