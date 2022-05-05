@@ -146,3 +146,25 @@ reverseSentence('');                       // ""
 reverseSentence('Hello World');            // "World Hello"
 reverseSentence('Reverse these words');    // "words these Reverse"
 */
+
+// 10.
+
+/*
+function reverseWords(sentence) {
+  return sentence
+    .split(" ")
+    .map((word) => {
+      if (word.length < 5) return word;
+      return reverseWord(word);
+    })
+    .join(" ");
+}
+
+function reverseWord(word) {
+  return word.split("").reverse().join("");
+}
+
+console.log(reverseWords("Professional")); // "lanoisseforP"
+console.log(reverseWords("Walk around the block")); // "Walk dnuora the kcolb"
+console.log(reverseWords("Launch School")); // "hcnuaL loohcS"
+*/
