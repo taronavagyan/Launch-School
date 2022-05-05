@@ -100,3 +100,22 @@ console.log(leadingSubstrings("abc")); // ["a", "ab", "abc"]
 console.log(leadingSubstrings("a")); // ["a"]
 console.log(leadingSubstrings("xyzzy")); // ["x", "xy", "xyz", "xyzz", "xyzzy"]
 */
+
+// 5.
+
+/*
+function substrings(string) {
+  let result = [];
+  let endIndex = 1;
+
+  while (endIndex <= string.length) {
+    for (let idx = 0; idx < string.length; idx += 1) {
+      result.push(string.substring(idx, endIndex));
+    }
+    endIndex += 1;
+  }
+  return result.filter((substring) => substring !== "").sort();
+}
+
+console.log(substrings("abcde"));
+*/
