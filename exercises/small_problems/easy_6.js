@@ -134,3 +134,15 @@ console.log(sequence(4, -7));
 console.log(sequence(3, 0));
 console.log(sequence(0, 100));
 */
+
+// 9.
+
+/*
+function reverseSentence(sentence) {
+  return sentence.split(" ").reverse().join(" ");
+}
+
+reverseSentence('');                       // ""
+reverseSentence('Hello World');            // "World Hello"
+reverseSentence('Reverse these words');    // "words these Reverse"
+*/
