@@ -54,3 +54,21 @@ console.log(
 );
 // [8, 18, 11, 15, 5, 4, 14, 9, 19, 1, 7, 17, 6, 16, 10, 13, 3, 12, 2, 0]
 */
+
+// 3.
+
+/*
+function multiplyAllPairs(list1, list2) {
+  let result = [];
+
+  for (let digit of list1) {
+    for (let value of list2) {
+      result.push(digit * value);
+    }
+  }
+
+  return result.sort((a, b) => a - b);
+}
+
+console.log(multiplyAllPairs([2, 4], [4, 3, 1, 2])); // [2, 4, 4, 6, 8, 8, 12, 16]
+*/
