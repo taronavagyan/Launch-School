@@ -119,3 +119,58 @@ function substrings(string) {
 
 console.log(substrings("abcde"));
 */
+
+// 6.
+
+/*
+function palindromes(string) {
+  return substrings(string).filter(
+    (substring) =>
+      substring.length > 1 &&
+      substring === substring.split("").reverse().join("")
+  );
+}
+
+function substrings(string) {
+  let substrings = [];
+  for (let startIndex = 0; startIndex < string.length; startIndex += 1) {
+    let substring = string.substring(startIndex);
+    substrings = substrings.concat(leadingSubstrings(substring));
+  }
+
+  return substrings;
+}
+
+function leadingSubstrings(string) {
+  let substrings = [];
+  for (let length = 1; length <= string.length; length += 1) {
+    substrings.push(string.slice(0, length));
+  }
+
+  return substrings;
+}
+
+console.log(palindromes("madam"));
+console.log(palindromes("abcd"));
+console.log(palindromes("knitting cassettes"));
+*/
+
+// 7.
+
+/*
+function sumOfSums(arrayOfNums) {
+  let sum = 0;
+  let multiplier = arrayOfNums.length;
+
+  for (let num of arrayOfNums) {
+    sum += num * multiplier;
+    multiplier -= 1;
+  }
+  return sum;
+}
+
+sumOfSums([3, 5, 2]); // (3) + (3 + 5) + (3 + 5 + 2) --> 21
+sumOfSums([1, 5, 7, 3]); // (1) + (1 + 5) + (1 + 5 + 7) + (1 + 5 + 7 + 3) --> 36
+sumOfSums([4]); // 4
+sumOfSums([1, 2, 3, 4, 5]); // 35
+*/
