@@ -70,5 +70,33 @@ function multiplyAllPairs(list1, list2) {
   return result.sort((a, b) => a - b);
 }
 
-console.log(multiplyAllPairs([2, 4], [4, 3, 1, 2])); // [2, 4, 4, 6, 8, 8, 12, 16]
+console.log(multiplyAllPairs([2, 4], [4, 3, 1, 2]));
+// [2, 4, 4, 6, 8, 8, 12, 16]
+*/
+
+// 4.
+
+// 1. split string into array of chars
+// 1a.  intialize a result array to []
+// 1b.  initliaze a endIndex variable to 1
+// 2. while endIndex < arrayOfChars.length
+// 2a.  result.push(arrayOfChars.substring(0, endIndex))
+// 2b.  endIndex += 1
+// 3. return result
+
+/*
+function leadingSubstrings(string) {
+  let result = [];
+  let endIndex = 1;
+
+  while (endIndex <= string.length) {
+    result.push(string.substring(0, endIndex));
+    endIndex += 1;
+  }
+  return result;
+}
+
+console.log(leadingSubstrings("abc")); // ["a", "ab", "abc"]
+console.log(leadingSubstrings("a")); // ["a"]
+console.log(leadingSubstrings("xyzzy")); // ["x", "xy", "xyz", "xyzz", "xyzzy"]
 */
