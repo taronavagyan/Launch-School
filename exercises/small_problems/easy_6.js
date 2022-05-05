@@ -171,6 +171,7 @@ console.log(reverseWords("Launch School")); // "hcnuaL loohcS"
 
 // 11.
 
+/*
 function reverseArray(arr) {
   let reversedArr = [];
 
@@ -201,3 +202,40 @@ let list3 = [];
 let result3 = reverseArray(list3);
 console.log(result3); // logs []
 console.log(list3 === result3); // logs true
+*/
+
+// 12.
+
+/*
+function isBalanced(string) {
+  let chars = string.split("");
+  let openParenthesisIndices = [];
+  let closedParenthesisIndices = [];
+
+  chars.forEach((char, idx) => {
+    if (char === "(") openParenthesisIndices.push(idx);
+    if (char === ")") closedParenthesisIndices.push(idx);
+  });
+
+  if (openParenthesisIndices.length !== closedParenthesisIndices.length) {
+    return false;
+  }
+
+  for (let idx = 0; idx < openParenthesisIndices.length; idx += 1) {
+    if (closedParenthesisIndices[idx] < openParenthesisIndices[idx]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(isBalanced("What (is) this?") === true);
+console.log(isBalanced("What is) this?") === false);
+console.log(isBalanced("What (is this?") === false);
+console.log(isBalanced("((What) (is this))?") === true);
+console.log(isBalanced("((What)) (is this))?") === false);
+console.log(isBalanced("Hey!") === true);
+console.log(isBalanced(")Hey!(") === false);
+
+console.log(isBalanced("What ((is))) up(") === false);
+*/
