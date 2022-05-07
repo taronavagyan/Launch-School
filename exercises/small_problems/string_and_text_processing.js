@@ -33,3 +33,27 @@ console.log(removeVowels(["green", "YELLOW", "black", "white"]));
 console.log(removeVowels(["ABC", "AEIOU", "XYZ"]));
 // ["BC", "", "XYZ"]
 */
+
+// 3.
+
+/*
+function letterCaseCount(string) {
+  let chars = string.split("");
+  let caseCounter = {};
+
+  caseCounter.lower = chars.filter(
+    (char) => char === char.toLowerCase() && char.match(/[a-z]/i)
+  ).length;
+  caseCounter.uppercase = chars.filter(
+    (char) => char === char.toUpperCase() && char.match(/[a-z]/i)
+  ).length;
+  caseCounter.neither = chars.filter((char) => !char.match(/[a-z]/i)).length;
+
+  return caseCounter;
+}
+
+letterCaseCount("abCdef 123"); // { lowercase: 5, uppercase: 1, neither: 4 }
+letterCaseCount("AbCd +Ef"); // { lowercase: 3, uppercase: 3, neither: 2 }
+letterCaseCount("123"); // { lowercase: 0, uppercase: 0, neither: 3 }
+letterCaseCount(""); // { lowercase: 0, uppercase: 0, neither: 0 }
+*/
