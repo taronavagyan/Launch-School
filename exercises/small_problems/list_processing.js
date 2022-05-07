@@ -174,3 +174,38 @@ sumOfSums([1, 5, 7, 3]); // (1) + (1 + 5) + (1 + 5 + 7) + (1 + 5 + 7 + 3) --> 36
 sumOfSums([4]); // 4
 sumOfSums([1, 2, 3, 4, 5]); // 35
 */
+
+// 8.
+
+// GET array of subarrays. Each subarray contains a string representing
+// a fruit, and a number representing the quantity
+// Create an empty result array
+// For each subarray, push the string to result [quantity] number of times
+// Return result
+
+/*
+function buyFruit(groceryList) {
+  let result = [];
+
+  for (let subarray of groceryList) {
+    let item = subarray[0];
+    let quantity = subarray[1];
+
+    while (quantity > 0) {
+      result.push(item);
+      quantity -= 1;
+    }
+  }
+
+  return result;
+}
+
+console.log(
+  buyFruit([
+    ["apple", 3],
+    ["orange", 1],
+    ["banana", 2],
+  ])
+);
+// returns ["apple", "apple", "apple", "orange", "banana", "banana"]
+*/
