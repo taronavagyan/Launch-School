@@ -15,3 +15,9 @@ console.log(["arc", "bat", "cape", "ants", "cap"].sort());
   }
 }); // => [ 1, 2, 4, 9, 11, 21, 107 ]
 */
+
+/*
+let words = ["go", "ahead", "and", "jump"];
+words.sort((a, b) => a.length - b.length);
+console.log(words);
+*/
