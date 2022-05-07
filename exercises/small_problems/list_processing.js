@@ -214,13 +214,13 @@ console.log(
 
 // GET a target ID
 // GET an array of transactions
-// transcationsArray contains objects with
+// transactionsArray contains objects with
 // ID, movement, and quantity properties
-// return transcations filtered by ID property compared to target ID
+// return transactions filtered by ID property compared to target ID
 
 /*
-function transactionsFor(targetID, transcationsList) {
-  return transcationsList.filter((transcation) => transcation.id === targetID);
+function transactionsFor(itemID, transactions) {
+  return transactions.filter((transcation) => transcation.id === itemID);
 }
 
 let transactions = [
@@ -241,4 +241,60 @@ console.log(transactionsFor(101, transactions));
 // [ { id: 101, movement: "in",  quantity:  5 },
 //   { id: 101, movement: "in",  quantity: 12 },
 //   { id: 101, movement: "out", quantity: 18 }, ]
+*/
+
+// 10.
+
+// GET itemID
+// GET a target ID
+// GET an array of transactions
+// transactionsArray contains objects with
+// ID, movement, and quantity properties
+// SET itemHistory to transactions filtered by ID property compared to target ID
+// SET itemAdded to itemHistory filtered by movement property compared to 'in',
+// reduced to a sum quantity
+// SET itemTaken to itemHistory filtered by movement property compared to 'out'
+// reduced to a sum quantity
+//  itemAdded - itemTaken > 0
+
+/*
+function isItemAvailable(itemId, transactions) {
+  let itemHistory = transactionsFor(itemId, transactions);
+  let itemInputted = itemHistory.filter((item) => item.movement === "in");
+  let itemOutputted = itemHistory.filter((item) => item.movement === "out");
+
+  let itemAdded = 0;
+  let itemTaken = 0;
+
+  for (let transaction of itemInputted) {
+    itemAdded += transaction.quantity;
+  }
+
+  for (let transaction of itemOutputted) {
+    itemTaken += transaction.quantity;
+  }
+
+  return itemAdded - itemTaken > 0;
+}
+
+function transactionsFor(itemID, transactions) {
+  return transactions.filter((transcation) => transcation.id === itemID);
+}
+
+let transactions = [
+  { id: 101, movement: "in", quantity: 5 },
+  { id: 105, movement: "in", quantity: 10 },
+  { id: 102, movement: "out", quantity: 17 },
+  { id: 101, movement: "in", quantity: 12 },
+  { id: 103, movement: "out", quantity: 20 },
+  { id: 102, movement: "out", quantity: 15 },
+  { id: 105, movement: "in", quantity: 25 },
+  { id: 101, movement: "out", quantity: 18 },
+  { id: 102, movement: "in", quantity: 22 },
+  { id: 103, movement: "out", quantity: 15 },
+];
+
+console.log(isItemAvailable(101, transactions)); // false
+console.log(isItemAvailable(103, transactions)); // false
+console.log(isItemAvailable(105, transactions)); // true
 */
