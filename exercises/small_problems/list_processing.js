@@ -255,7 +255,7 @@ console.log(transactionsFor(101, transactions));
 // reduced to a sum quantity
 // SET itemTaken to itemHistory filtered by movement property compared to 'out'
 // reduced to a sum quantity
-//  itemAdded - itemTaken > 0
+// Return itemAdded - itemTaken > 0
 
 /*
 function isItemAvailable(itemId, transactions) {
