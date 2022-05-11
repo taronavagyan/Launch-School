@@ -11,3 +11,13 @@ arr[0]["c"] = "cat";
 arr[0].d = "dog";
 console.log(arr); // => [{ a: 'ant', c: 'cat', d: 'dog' }, { b: 'bear' }]
 */
+
+/*
+
+let obj = { a: { b: 'foo' }, c: ['bar'] };
+let copyOfObj = Object.assign({}, obj);
+
+obj['a']['d'] = 'baz';
+console.log(copyOfObj); // => { a: { b: 'foo', d: 'baz' }, c: [ 'bar' ] }
+console.log(obj);       // => { a: { b: 'foo', d: 'baz' }, c: [ 'bar' ] }
+*/
