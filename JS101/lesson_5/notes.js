@@ -21,3 +21,11 @@ obj['a']['d'] = 'baz';
 console.log(copyOfObj); // => { a: { b: 'foo', d: 'baz' }, c: [ 'bar' ] }
 console.log(obj);       // => { a: { b: 'foo', d: 'baz' }, c: [ 'bar' ] }
 */
+
+// MAKING A DEEP COPY
+
+/*
+let arr = [{ b: 'foo' }, ['bar']];
+let serializedArr = JSON.stringify(arr);
+let deepCopiedArr = JSON.parse(serializedArr);
+*/
