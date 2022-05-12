@@ -72,7 +72,6 @@ function wordCap(sentence) {
   let words = sentence.split(" ");
   words = words.map((word) => word.split(""));
   words.forEach((word) => (word[0] = word[0].toUpperCase()));
-  console.log(words);
+  words = words.map((word) => word.join(""));
+  return words.join(" ");
 }
-
-wordCap("hello friend");
