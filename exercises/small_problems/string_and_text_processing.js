@@ -67,3 +67,12 @@ letterCaseCount(""); // { lowercase: 0, uppercase: 0, neither: 0 }
 // Join chars back into word
 // Join words back into string
 // Return capitalized sentence
+
+function wordCap(sentence) {
+  let words = sentence.split(" ");
+  words = words.map((word) => word.split(""));
+  words.forEach((word) => (word[0] = word[0].toUpperCase()));
+  console.log(words);
+}
+
+wordCap("hello friend");
