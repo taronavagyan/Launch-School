@@ -71,9 +71,9 @@ letterCaseCount(""); // { lowercase: 0, uppercase: 0, neither: 0 }
 /*
 function wordCap(sentence) {
   let words = sentence.split(" ");
-  words = words.map((word) => word.split(""));
-  words.forEach((word) => (word[0] = word[0].toUpperCase()));
-  words = words.map((word) => word.join(""));
+  words = words.map(
+    (word) => word.slice(0, 1).toUpperCase() + word.slice(1).toLowerCase()
+  );
   return words.join(" ");
 }
 
