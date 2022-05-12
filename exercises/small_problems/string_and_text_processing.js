@@ -59,3 +59,11 @@ letterCaseCount(""); // { lowercase: 0, uppercase: 0, neither: 0 }
 */
 
 // 4.
+
+// GET sentence as a string
+// Split string into array of words
+// Split words into array of chars
+// Capitalize first letter of chars
+// Join chars back into word
+// Join words back into string
+// Return capitalized sentence
