@@ -68,6 +68,7 @@ letterCaseCount(""); // { lowercase: 0, uppercase: 0, neither: 0 }
 // Join words back into string
 // Return capitalized sentence
 
+/*
 function wordCap(sentence) {
   let words = sentence.split(" ");
   words = words.map((word) => word.split(""));
@@ -75,3 +76,8 @@ function wordCap(sentence) {
   words = words.map((word) => word.join(""));
   return words.join(" ");
 }
+
+wordCap("four score and seven"); // "Four Score And Seven"
+wordCap("the javaScript language"); // "The Javascript Language"
+wordCap('this is a "quoted" word'); // 'This Is A "quoted" Word'
+*/
