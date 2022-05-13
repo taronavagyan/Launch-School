@@ -90,3 +90,16 @@ wordCap('this is a "quoted" word'); // 'This Is A "quoted" Word'
 //   if char is equal to char.toUpperCase(), make it lowercase
 //   else make it uppercase
 // join chars into string and return
+
+function swapCase(string) {
+  let chars = string.split("");
+  for (let idx = 0; idx < chars.length; idx += 1) {
+    let char = chars[idx];
+    chars[idx] =
+      char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase();
+  }
+  return chars.join("");
+}
+
+console.log(swapCase("CamelCase")); // "cAMELcASE"
+console.log(swapCase("Tonight on XYZ-TV")); // "tONIGHT ON xyz-tv"
