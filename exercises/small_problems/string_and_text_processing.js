@@ -172,3 +172,12 @@ console.log(
 // for each word of words
 //   push (word + " " wordlength[currentindex]) to result
 // RETURN result
+
+function wordLengths(string) {
+  let result = [];
+  let words = string.split(" ");
+  let wordLengths = words.map((word) => word.length);
+  console.log(wordLengths);
+}
+
+wordLengths("horses are cool");
