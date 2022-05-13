@@ -117,9 +117,9 @@ console.log(swapCase("Tonight on XYZ-TV")); // "tONIGHT ON xyz-tv"
 
 /*
 function staggeredCase(string) {
-  string = string.toLowerCase();
-  let chars = string.split("");
-  return chars
+  return string
+    .toLowerCase()
+    .split("")
     .map((char, idx) => (idx % 2 === 0 ? char.toUpperCase() : char))
     .join("");
 }
