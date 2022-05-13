@@ -91,6 +91,7 @@ wordCap('this is a "quoted" word'); // 'This Is A "quoted" Word'
 //   else make it uppercase
 // join chars into string and return
 
+/*
 function swapCase(string) {
   let chars = string.split("");
   for (let idx = 0; idx < chars.length; idx += 1) {
@@ -103,3 +104,4 @@ function swapCase(string) {
 
 console.log(swapCase("CamelCase")); // "cAMELcASE"
 console.log(swapCase("Tonight on XYZ-TV")); // "tONIGHT ON xyz-tv"
+*/
