@@ -105,3 +105,12 @@ function swapCase(string) {
 console.log(swapCase("CamelCase")); // "cAMELcASE"
 console.log(swapCase("Tonight on XYZ-TV")); // "tONIGHT ON xyz-tv"
 */
+
+// 6.
+
+// GET string
+// convert string to lowercase
+// split string into array of chars
+// for each char
+//   if the char is at an odd index, capitalize it
+// join array of chars and return
