@@ -114,3 +114,16 @@ console.log(swapCase("Tonight on XYZ-TV")); // "tONIGHT ON xyz-tv"
 // for each char
 //   if the char is at an odd index, capitalize it
 // join array of chars and return
+
+/*
+function staggeredCase(string) {
+  string = string.toLowerCase();
+  let chars = string.split("");
+  return chars
+    .map((char, idx) => (idx % 2 === 0 ? char.toUpperCase() : char))
+    .join("");
+}
+staggeredCase("I Love Launch School!"); // "I LoVe lAuNcH ScHoOl!"
+staggeredCase("ALL_CAPS"); // "AlL_CaPs"
+staggeredCase("ignore 77 the 4444 numbers"); // "IgNoRe 77 ThE 4444 nUmBeRs"
+*/
