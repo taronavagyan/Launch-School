@@ -112,7 +112,7 @@ console.log(swapCase("Tonight on XYZ-TV")); // "tONIGHT ON xyz-tv"
 // convert string to lowercase
 // split string into array of chars
 // for each char
-//   if the char is at an odd index, capitalize it
+//   if the char is at an even index, capitalize it
 // join array of chars and return
 
 /*
@@ -126,4 +126,39 @@ function staggeredCase(string) {
 staggeredCase("I Love Launch School!"); // "I LoVe lAuNcH ScHoOl!"
 staggeredCase("ALL_CAPS"); // "AlL_CaPs"
 staggeredCase("ignore 77 the 4444 numbers"); // "IgNoRe 77 ThE 4444 nUmBeRs"
+*/
+
+// 7.
+
+// GET string
+// SET alphabeticIndex to 0
+// convert string to lowercase
+// split string into array of chars
+// for each char
+// if char is alphabetic, increment alphabeticIndex
+// if alphabeticIndex is even, capitalize char
+// join chars and return
+
+/*
+function staggeredCase(string) {
+  let alphabeticIndex = 0;
+  let chars = string.toLowerCase().split("");
+
+  for (let idx = 0; idx < chars.length; idx += 1) {
+    if (chars[idx].match(/[a-z]/)) {
+      if (alphabeticIndex % 2 === 0) {
+        chars[idx] = chars[idx].toUpperCase();
+      }
+      alphabeticIndex += 1;
+    }
+  }
+
+  return chars.join("");
+}
+
+console.log(staggeredCase("I Love Launch School!") === "I lOvE lAuNcH sChOoL!");
+console.log(staggeredCase("ALL CAPS") === "AlL cApS");
+console.log(
+  staggeredCase("ignore 77 the 444 numbers") === "IgNoRe 77 ThE 444 nUmBeRs"
+);
 */
