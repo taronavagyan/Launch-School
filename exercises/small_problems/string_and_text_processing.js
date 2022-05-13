@@ -162,3 +162,13 @@ console.log(
   staggeredCase("ignore 77 the 444 numbers") === "IgNoRe 77 ThE 444 nUmBeRs"
 );
 */
+
+// 8.
+
+// GET string
+// SET result to an empty array
+// SET words to string split into array of words
+// SET wordlengths to word length of each word in words
+// for each word of words
+//   push (word + " " wordlength[currentindex]) to result
+// RETURN result
