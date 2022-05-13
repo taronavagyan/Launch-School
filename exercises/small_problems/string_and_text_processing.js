@@ -81,3 +81,12 @@ wordCap("four score and seven"); // "Four Score And Seven"
 wordCap("the javaScript language"); // "The Javascript Language"
 wordCap('this is a "quoted" word'); // 'This Is A "quoted" Word'
 */
+
+// 5.
+
+// get string
+// split string into array of chars
+// for char of chars
+//   if char is equal to char.toUpperCase(), make it lowercase
+//   else make it uppercase
+// join chars into string and return
