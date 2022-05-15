@@ -173,6 +173,7 @@ console.log(
 //   push (word + " " wordlength[currentindex]) to result
 // RETURN result
 
+/*
 function wordLengths(string = []) {
   if (string.length === 0) {
     return [];
@@ -195,3 +196,4 @@ wordLengths("Supercalifragilisticexpialidocious");
 
 wordLengths(""); // []
 wordLengths(); // []
+*/
