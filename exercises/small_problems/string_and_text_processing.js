@@ -178,9 +178,7 @@ function wordLengths(string = []) {
     return [];
   }
 
-  let words = string.split(" ");
-  let result = words.map((word) => word + " " + word.length);
-  console.log(result);
+  return string.split(" ").map((word) => word + " " + word.length);
 }
 
 wordLengths("cow sheep chicken");
