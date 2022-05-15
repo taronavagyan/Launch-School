@@ -173,7 +173,6 @@ console.log(
 //   push (word + " " wordlength[currentindex]) to result
 // RETURN result
 
-/*
 function wordLengths(string = []) {
   if (string.length === 0) {
     return [];
@@ -181,7 +180,7 @@ function wordLengths(string = []) {
 
   let words = string.split(" ");
   let result = words.map((word) => word + " " + word.length);
-  return result;
+  console.log(result);
 }
 
 wordLengths("cow sheep chicken");
@@ -198,4 +197,3 @@ wordLengths("Supercalifragilisticexpialidocious");
 
 wordLengths(""); // []
 wordLengths(); // []
-*/
