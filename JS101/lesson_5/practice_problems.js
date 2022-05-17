@@ -100,3 +100,25 @@ let totalMaleAge = munstersValues.reduce((totalAge, person) => {
 
 console.log(totalMaleAge);
 */
+
+// 6.
+
+/*
+let munsters = {
+  herman: { age: 32, gender: "male" },
+  lily: { age: 30, gender: "female" },
+  grandpa: { age: 402, gender: "male" },
+  eddie: { age: 10, gender: "male" },
+  marilyn: { age: 23, gender: "female" },
+};
+
+let munstersEntries = Object.entries(munsters);
+console.log(munstersEntries);
+
+for (let member of munstersEntries) {
+  let name = member[0];
+  let age = member[1].age;
+  let gender = member[1].gender;
+  console.log(`${name} is a ${age}-year-old ${gender}.`);
+}
+*/
