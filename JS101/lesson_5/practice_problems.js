@@ -78,3 +78,25 @@ let obj2 = { a: { a: ["1", "two", 3], b: 4 }, b: 5 };
 obj2.a.a[2] = 4;
 console.log(obj2);
 */
+
+// 5.
+
+/*
+let munsters = {
+  Herman: { age: 32, gender: "male" },
+  Lily: { age: 30, gender: "female" },
+  Grandpa: { age: 402, gender: "male" },
+  Eddie: { age: 10, gender: "male" },
+  Marilyn: { age: 23, gender: "female" },
+};
+
+let munstersValues = Object.values(munsters);
+let totalMaleAge = munstersValues.reduce((totalAge, person) => {
+  if (person.gender === "male") {
+    totalAge += person.age;
+  }
+  return totalAge;
+}, 0);
+
+console.log(totalMaleAge);
+*/
