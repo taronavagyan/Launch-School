@@ -167,10 +167,30 @@ let arr = [
 ];
 
 let sortedArr = arr.map((subArray) => {
-  if (typeof subArray[0] === Number) {
+  if (typeof subArray[0] === "number") {
     return [...subArray].sort((a, b) => a - b);
   } else {
     return [...subArray].sort();
+  }
+});
+
+console.log(sortedArr);
+*/
+
+// 10.
+
+/*
+let arr = [
+  ["b", "c", "a"],
+  [2, 11, -3],
+  ["blue", "black", "green"],
+];
+
+let sortedArr = arr.map((subArray) => {
+  if (typeof subArray[0] === "number") {
+    return subArray.sort((a, b) => b - a);
+  } else {
+    return [...subArray].sort().reverse();
   }
 });
 
