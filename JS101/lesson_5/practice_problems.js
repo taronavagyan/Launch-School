@@ -156,3 +156,23 @@ Object.values(obj)
     });
   });
 */
+
+// 9.
+
+/*
+let arr = [
+  ["b", "c", "a"],
+  [2, 11, -3],
+  ["blue", "black", "green"],
+];
+
+let sortedArr = arr.map((subArray) => {
+  if (typeof subArray[0] === Number) {
+    return [...subArray].sort((a, b) => a - b);
+  } else {
+    return [...subArray].sort();
+  }
+});
+
+console.log(sortedArr);
+*/
