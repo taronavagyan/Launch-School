@@ -135,3 +135,24 @@ arr[1][0] -= a;
 // a === 2
 // b === [ 3, 8 ]
 */
+
+// 8.
+
+/*
+let obj = {
+  first: ["the", "quick"],
+  second: ["brown", "fox"],
+  third: ["jumped"],
+  fourth: ["over", "the", "lazy", "dog"],
+};
+
+Object.values(obj)
+  .flat()
+  .forEach((string) => {
+    string.split("").forEach((char) => {
+      if (["a", "e", "i", "o", "u"].includes(char.toLowerCase())) {
+        console.log(char);
+      }
+    });
+  });
+*/
