@@ -305,3 +305,34 @@ let newArr = arr.filter((obj) =>
 
 console.log(newArr);
 */
+
+// 16.
+
+// GIVEN an array of subarrays
+// Create an object with the first element
+// of each subarray being the key, and the second
+// element being the value
+
+// SET empty result obj
+// Loop through array of subarrays
+// SET the first element as the key, and the second as the value
+// of obj
+
+/*
+let arr = [
+  ["a", 1],
+  ["b", "two"],
+  ["sea", { c: 3 }],
+  ["D", ["a", "b", "c"]],
+];
+
+let result = {};
+
+arr.forEach((subArray) => {
+  result[subArray[0]] = subArray[1];
+});
+console.log(result);
+
+// expected value of object
+// { a: 1, b: 'two', sea: { c: 3 }, D: [ 'a', 'b', 'c' ] }
+*/
