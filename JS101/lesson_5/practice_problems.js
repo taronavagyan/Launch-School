@@ -249,3 +249,41 @@ let sortedArr = arr.sort((subArr1, subArr2) => {
 
 console.log(sortedArr);
 */
+
+// 14.
+
+// GIVEN an object with nested object
+// Create a result array
+// Loop through the objects
+// If the object's type is fruit
+//  MAP the object's colors with each color capitalized to result
+// If the object's type is vegetable
+//  MAP the object's size in ALL CAPS to result
+// RETURN result
+
+/*
+let obj = {
+  grape: { type: "fruit", colors: ["red", "green"], size: "small" },
+  carrot: { type: "vegetable", colors: ["orange"], size: "medium" },
+  apple: { type: "fruit", colors: ["red", "green"], size: "medium" },
+  apricot: { type: "fruit", colors: ["orange"], size: "medium" },
+  marrow: { type: "vegetable", colors: ["green"], size: "large" },
+};
+
+let result = [];
+
+for (let key in obj) {
+  let type = obj[key].type;
+  let colors = obj[key].colors.map(
+    (color) => color[0].toUpperCase() + color.slice(1)
+  );
+  let size = obj[key].size.toUpperCase();
+
+  if (type === "fruit") {
+    result.push(colors);
+  } else {
+    result.push(size);
+  }
+}
+console.log(result);
+*/
