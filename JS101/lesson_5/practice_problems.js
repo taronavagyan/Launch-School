@@ -225,3 +225,27 @@ let filteredArr = arr.map((subArray) => {
 
 console.log(filteredArr);
 */
+
+// 13.
+
+/*
+let arr = [
+  [1, 6, 7],
+  [1, 5, 3],
+  [1, 8, 3],
+];
+
+let sortedArr = arr.sort((subArr1, subArr2) => {
+  let sum1 = subArr1.reduce((a, b) => {
+    return b % 2 === 1 ? a + b : a;
+  });
+
+  let sum2 = subArr2.reduce((a, b) => {
+    return b % 2 === 1 ? a + b : a;
+  });
+
+  return sum1 - sum2;
+});
+
+console.log(sortedArr);
+*/
