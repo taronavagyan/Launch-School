@@ -336,3 +336,31 @@ console.log(result);
 // expected value of object
 // { a: 1, b: 'two', sea: { c: 3 }, D: [ 'a', 'b', 'c' ] }
 */
+
+// 17.
+
+/*
+function createHexadecimal() {
+  let digit = Math.round(Math.random() * 22) + 48;
+  while (digit > 57 && digit < 65) {
+    digit = Math.round(Math.random() * 22) + 48;
+  }
+
+  return String.fromCharCode(digit).toLowerCase();
+}
+
+function createUUID() {
+  const sequence = [8, 4, 4, 4, 12];
+  let result = "";
+
+  for (let limit of sequence) {
+    for (let charIdx = 0; charIdx < limit; charIdx += 1) {
+      result += createHexadecimal();
+    }
+    result += "-";
+  }
+  return result.slice(0, result.length - 1);
+}
+
+console.log(createUUID());
+*/
