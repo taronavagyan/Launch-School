@@ -55,6 +55,7 @@ rotateRightmostDigits(735291, 6);      // 352917
 // Concat the 2 pieces and add the target digit to the end
 // RETURN Number(numberAsString)
 
+/*
 function rotateRightmostDigits(number, count) {
   let numberAsString = String(number);
   let targetIndex = numberAsString.length - count;
@@ -66,3 +67,4 @@ function rotateRightmostDigits(number, count) {
 }
 
 console.log(rotateRightmostDigits(123456789, 3));
+*/
