@@ -68,3 +68,5 @@ function rotateRightmostDigits(number, count) {
 
 console.log(rotateRightmostDigits(123456789, 3));
 */
+
+// 3.

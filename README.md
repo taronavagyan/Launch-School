@@ -11,3 +11,5 @@ April 8, 2022: I have officially begun the Core Curriculum.
 April 18, 2022: Finished Lessons 1 & 2 of JS101!
 
 May 3, 2022: Finished Lesson 3 and almost done with Lesson 4.
+
+May 20, 2022: Finished Lesson 5
