@@ -18,13 +18,11 @@ function displayBoard(board) {
 function initalizeBoard() {
   let board = {};
 
-  for (let count = 1; count <= 9; count += 1) {
-    board[count] = " ";
+  for (let square = 1; square <= 9; square += 1) {
+    board[square] = " ";
   }
   return board;
 }
 
 let board = initalizeBoard();
 displayBoard(board);
-
-displayBoard({ b: "b" });
