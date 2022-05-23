@@ -70,3 +70,38 @@ console.log(rotateRightmostDigits(123456789, 3));
 */
 
 // 3.
+
+// Given a number
+// Start each digit starting from the first digit
+// and ending with the penultimate digit
+// Return the max rotated digit
+
+function maxRotation(number) {
+  let result = number;
+
+  for (
+    let digitPlace = String(number).length;
+    digitPlace > 1;
+    digitPlace -= 1
+  ) {
+    result = rotateRightmostDigits(result, digitPlace);
+  }
+
+  return result;
+}
+
+function rotateRightmostDigits(number, count) {
+  let numberAsString = String(number);
+  let targetIndex = numberAsString.length - count;
+  let targetDigit = numberAsString[targetIndex];
+  numberAsString =
+    numberAsString.slice(0, targetIndex) +
+    numberAsString.slice(targetIndex + 1);
+  return Number(numberAsString + targetDigit);
+}
+
+console.log(maxRotation(735291)); // 321579
+console.log(maxRotation(3)); // 3
+console.log(maxRotation(35)); // 53
+console.log(maxRotation(105)); // 15 -- the leading zero gets dropped
+console.log(maxRotation(8703529146)); // 7321609845

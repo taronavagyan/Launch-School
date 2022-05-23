@@ -1,4 +1,5 @@
 function displayBoard(board) {
+  if (typeof board !== "object") board = initalizeBoard();
   console.log("");
   console.log("     |     |");
   console.log(`  ${board["1"]}  |  ${board["2"]}  |  ${board["3"]}`);
@@ -25,3 +26,5 @@ function initalizeBoard() {
 
 let board = initalizeBoard();
 displayBoard(board);
+
+displayBoard({ b: "b" });
