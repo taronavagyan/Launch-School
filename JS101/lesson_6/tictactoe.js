@@ -3,13 +3,27 @@ const readline = require("readline-sync");
 const INITIAL_MARKER = " ";
 const HUMAN_MARKER = "X";
 const COMPUTER_MARKER = "O";
+const WINNING_LINES = [
+  // rows
+  [1, 2, 3],
+  [(4, 5, 6)],
+  [(7, 8, 9)],
+  // columns
+  [(1, 4, 7)],
+  [(2, 5, 8)],
+  [(3, 6, 9)],
+  // diagonals
+  [(1, 5, 9)],
+  [(3, 5, 7)],
+];
 
 function prompt(msg) {
   console.log(`=> ${msg}`);
 }
 
 function displayBoard(board) {
-  if (typeof board !== "object") board = initalizeBoard();
+  console.clear();
+
   console.log("");
   console.log("     |     |");
   console.log(`  ${board["1"]}  |  ${board["2"]}  |  ${board["3"]}`);
@@ -63,8 +77,31 @@ function computerChoosesSquare(board) {
   board[square] = COMPUTER_MARKER;
 }
 
-function someoneWon() {
-  return false;
+function someoneWon(board) {
+  return !!detectWinner(board);
+}
+
+// eslint-disable-next-line max-lines-per-function
+function detectWinner(board) {
+  for (let line = 0; line < WINNING_LINES.length; line += 1) {
+    let [sq1, sq2, sq3] = WINNING_LINES[line];
+
+    if (
+      board[sq1] === HUMAN_MARKER &&
+      board[sq2] === HUMAN_MARKER &&
+      board[sq3] === HUMAN_MARKER
+    ) {
+      return "Player";
+    } else if (
+      board[sq1] === COMPUTER_MARKER &&
+      board[sq2] === COMPUTER_MARKER &&
+      board[sq3] === COMPUTER_MARKER
+    ) {
+      return "Computer";
+    }
+  }
+
+  return null;
 }
 
 let board = initalizeBoard();
@@ -76,4 +113,10 @@ while (true) {
   displayBoard(board);
 
   if (boardFull(board) || someoneWon(board)) break;
+}
+
+if (someoneWon(board)) {
+  prompt(`${detectWinner(board)} won!`);
+} else {
+  prompt("It's a tie!");
 }
