@@ -38,6 +38,10 @@ function emptySquares(board) {
   return Object.keys(board).filter((key) => board[key] === INITIAL_MARKER);
 }
 
+function boardFull(board) {
+  return emptySquares(board).length === 0;
+}
+
 function playerChoosesSquare(board) {
   let square;
 
@@ -59,10 +63,17 @@ function computerChoosesSquare(board) {
   board[square] = COMPUTER_MARKER;
 }
 
+function someoneWon() {
+  return false;
+}
+
 let board = initalizeBoard();
 displayBoard(board);
 
-playerChoosesSquare(board);
-computerChoosesSquare(board);
+while (true) {
+  playerChoosesSquare(board);
+  computerChoosesSquare(board);
+  displayBoard(board);
 
-displayBoard(board);
+  if (boardFull(board) || someoneWon(board)) break;
+}
