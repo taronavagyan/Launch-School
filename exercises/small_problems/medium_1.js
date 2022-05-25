@@ -105,3 +105,46 @@ console.log(maxRotation(35)); // 53
 console.log(maxRotation(105)); // 15 -- the leading zero gets dropped
 console.log(maxRotation(8703529146)); // 7321609845
 */
+
+// 4.
+
+// eslint-disable-next-line max-lines-per-function
+function miniLang(arg) {
+  let stack = [];
+  let register = 0;
+
+  let args = arg.split(" ");
+
+  for (let command of args) {
+    if (command === "PRINT") {
+      console.log(register);
+    }
+
+    if (Number.parseInt(command, 10)) {
+      register = Number(command);
+      console.log(register);
+    }
+
+    if (command === "PUSH") {
+      stack.push(Number(register));
+    }
+
+    if (command === "ADD") {
+      register += stack.pop();
+    }
+
+    if (command === "SUB") {
+      register -= stack.pop();
+    }
+
+    if (command === "MULT") {
+      register *= stack.pop();
+    }
+
+    if (command === "DIV") {
+      register /= 
+    }
+  }
+}
+
+miniLang("PRINT 5 10");
