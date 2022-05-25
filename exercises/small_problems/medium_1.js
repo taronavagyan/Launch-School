@@ -108,50 +108,43 @@ console.log(maxRotation(8703529146)); // 7321609845
 
 // 4.
 
+/*
 // eslint-disable-next-line max-lines-per-function
 function minilang(arg) {
   let stack = [];
   let register = 0;
-
   let args = arg.split(" ");
-
   for (let command of args) {
-    if (command === "PRINT") {
-      console.log(register);
-    }
-
-    if (Number.parseInt(command, 10)) {
-      register = Number(command);
-    }
-
-    if (command === "PUSH") {
-      stack.push(Number(register));
-    }
-
-    if (command === "ADD") {
-      register += stack.pop();
-    }
-
-    if (command === "SUB") {
-      register -= stack.pop();
-    }
-
-    if (command === "MULT") {
-      register *= stack.pop();
-    }
-
-    if (command === "DIV") {
-      register = Math.floor(register / stack.pop());
-    }
-
-    if (command === "REMAINDER") {
-      register = Math.floor(register % stack.pop());
-    }
-
-    if (command === "POP") {
-      register = stack.pop();
+    switch (command) {
+      case "PRINT":
+        console.log(register);
+        break;
+      case "PUSH":
+        stack.push(Number(register));
+        break;
+      case "POP":
+        register = stack.pop();
+        break;
+      case "ADD":
+        register += stack.pop();
+        break;
+      case "SUB":
+        register -= stack.pop();
+        break;
+      case "MULT":
+        register *= stack.pop();
+        break;
+      case "DIV":
+        register = Math.floor(register / stack.pop());
+        break;
+      case "REMAINDER":
+        register = Math.floor(register % stack.pop());
+        break;
+      default:
+        register = Number(command);
     }
   }
+  return register;
 }
 
 minilang("PRINT");
@@ -185,3 +178,4 @@ minilang("-3 PUSH 5 SUB PRINT");
 
 minilang("6 PUSH");
 // (nothing is printed because the `program` argument has no `PRINT` commands)
+*/
