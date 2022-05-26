@@ -99,24 +99,33 @@ function detectWinner(board) {
   return null;
 }
 
-let board = initalizeBoard();
-
 while (true) {
+  let board = initalizeBoard();
+
+  while (true) {
+    displayBoard(board);
+
+    playerChoosesSquare(board);
+    if (boardFull(board) || someoneWon(board)) break;
+
+    computerChoosesSquare(board);
+    displayBoard(board);
+
+    if (boardFull(board) || someoneWon(board)) break;
+  }
+
   displayBoard(board);
 
-  playerChoosesSquare(board);
-  if (boardFull(board) || someoneWon(board)) break;
+  if (someoneWon(board)) {
+    prompt(`${detectWinner(board)} won!`);
+  } else {
+    prompt("It's a tie!");
+  }
 
-  computerChoosesSquare(board);
-  displayBoard(board);
+  prompt("Would you like to play again? y/n");
+  let answer = readline.question().toLowerCase()[0];
 
-  if (boardFull(board) || someoneWon(board)) break;
+  if (answer !== "y") break;
 }
 
-displayBoard(board);
-
-if (someoneWon(board)) {
-  prompt(`${detectWinner(board)} won!`);
-} else {
-  prompt("It's a tie!");
-}
+prompt("Thanks for playing!");
