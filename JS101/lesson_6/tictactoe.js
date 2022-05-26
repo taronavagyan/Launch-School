@@ -98,15 +98,20 @@ function detectWinner(board) {
 }
 
 let board = initalizeBoard();
-displayBoard(board);
 
 while (true) {
+  displayBoard(board);
+
   playerChoosesSquare(board);
+  if (boardFull(board) || someoneWon(board)) break;
+
   computerChoosesSquare(board);
   displayBoard(board);
 
   if (boardFull(board) || someoneWon(board)) break;
 }
+
+displayBoard(board);
 
 if (someoneWon(board)) {
   prompt(`${detectWinner(board)} won!`);
