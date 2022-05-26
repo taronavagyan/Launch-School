@@ -179,3 +179,12 @@ minilang("-3 PUSH 5 SUB PRINT");
 minilang("6 PUSH");
 // (nothing is printed because the `program` argument has no `PRINT` commands)
 */
+
+// 5.
+
+// GET sentence as string
+// Make object with digits in words as keys and digits as values
+// Split string into array of words separated by " "
+// For every word, if the word is a digit word
+// Set it equal to the corresponding object value
+// Join the words back with " " and RETURN
