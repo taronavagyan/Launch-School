@@ -271,3 +271,29 @@ fibonacci(20); // 6765
 fibonacci(50); // 12586269025
 fibonacci(75); // 2111485077978050
 */
+
+// 8.
+
+const FIB_SEQ = {
+  0: 0,
+  1: 1,
+  2: 1,
+};
+
+function fibonacci(nth) {
+  if (nth === 0) {
+    return FIB_SEQ[nth];
+  }
+  if (nth <= 2) {
+    return FIB_SEQ[nth];
+  }
+
+  console.log(nth - 1);
+  let number = FIB_SEQ[nth - 1] ? FIB_SEQ[nth - 1] : fibonacci(nth - 1);
+  console.log(number);
+  console.log("---");
+
+  return fibonacci(nth - 1) + fibonacci(nth - 2);
+}
+
+console.log(fibonacci(4));
