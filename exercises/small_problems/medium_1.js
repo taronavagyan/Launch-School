@@ -281,19 +281,9 @@ const FIB_SEQ = {
 };
 
 function fibonacci(nth) {
-  if (nth === 0) {
-    return FIB_SEQ[nth];
-  }
-  if (nth <= 2) {
-    return FIB_SEQ[nth];
-  }
+  FIB_SEQ[nth - 1] = FIB_SEQ[nth - 1] ? FIB_SEQ[nth - 1] : fibonacci(nth - 1);
 
-  console.log(nth - 1);
-  let number = FIB_SEQ[nth - 1] ? FIB_SEQ[nth - 1] : fibonacci(nth - 1);
-  console.log(number);
-  console.log("---");
-
-  return fibonacci(nth - 1) + fibonacci(nth - 2);
+  return FIB_SEQ[nth - 1] + FIB_SEQ[nth - 2];
 }
 
-console.log(fibonacci(4));
+console.log(fibonacci(75));
