@@ -189,6 +189,7 @@ minilang("6 PUSH");
 // Set it equal to the corresponding object value
 // Join the words back with " " and RETURN
 
+/*
 const NUM_WORDS = {
   zero: 0,
   one: 1,
@@ -215,3 +216,28 @@ console.log(
   wordToDigit("Please call me at five five five one two three four. Thanks.")
 );
 // "Please call me at 5 5 5 1 2 3 4. Thanks."
+*/
+
+// 6.
+
+function fibonacci(nth) {
+  if (nth === 0) return 0;
+
+  if (nth <= 2) return 1;
+
+  return fibonacci(nth - 1) + fibonacci(nth - 2);
+}
+
+console.log(fibonacci(0)); // 0
+
+console.log(fibonacci(1)); // 1
+
+console.log(fibonacci(2)); // 1
+
+console.log(fibonacci(3)); // 2
+
+console.log(fibonacci(4)); // 3
+
+console.log(fibonacci(5)); // 5
+console.log(fibonacci(12)); // 144
+console.log(fibonacci(20)); // 6765
