@@ -220,6 +220,8 @@ console.log(
 
 // 6.
 
+/*
+
 function fibonacci(nth) {
   if (nth === 0) return 0;
 
@@ -241,3 +243,31 @@ console.log(fibonacci(4)); // 3
 console.log(fibonacci(5)); // 5
 console.log(fibonacci(12)); // 144
 console.log(fibonacci(20)); // 6765
+
+*/
+
+// 7.
+
+/*
+function fibonacci(nth) {
+  if (nth === 0) return 0;
+
+  let fibonacciNum;
+  let lastNum = 1;
+  let secondLastNum = 0;
+  let holder = 0;
+
+  for (let num = 2; num < nth; num += 1) {
+    holder = lastNum;
+    lastNum += secondLastNum;
+    secondLastNum = holder;
+    fibonacciNum = lastNum + secondLastNum;
+  }
+
+  return fibonacciNum;
+}
+
+fibonacci(20); // 6765
+fibonacci(50); // 12586269025
+fibonacci(75); // 2111485077978050
+*/
