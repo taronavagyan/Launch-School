@@ -29,3 +29,14 @@ function shuffle(array) {
 
   return array;
 }
+
+function initializeDeck() {
+  let deck = [];
+
+  for (let suit of SUITS) {
+    for (let value of VALUES) {
+      deck.push([suit, value]);
+    }
+  }
+  return shuffle(deck);
+}
