@@ -274,6 +274,7 @@ fibonacci(75); // 2111485077978050
 
 // 8.
 
+/*
 const FIB_SEQ = {
   0: 0,
   1: 1,
@@ -286,4 +287,5 @@ function fibonacci(nth) {
   return FIB_SEQ[nth - 1] + FIB_SEQ[nth - 2];
 }
 
-console.log(fibonacci(75));
+console.log(fibonacci(993));
+*/
