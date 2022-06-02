@@ -18,7 +18,7 @@ const VALUES = [
 ];
 
 function prompt(msg) {
-  console.log(`=> {msg}`);
+  console.log(`=> ${msg}`);
 }
 
 function shuffle(array) {
@@ -119,7 +119,7 @@ function playAgain() {
   console.log("-------------");
   prompt("Would you like to play again? (y/n)");
   let answer = readline.question();
-  return answer[0].toLowerCase() === "y";
+  return answer.toLowerCase()[0] === "y";
 }
 
 function popTwoFromDeck(deck) {
@@ -127,12 +127,12 @@ function popTwoFromDeck(deck) {
 }
 
 function hand(cards) {
-  return cards.map((card) => `${card[1]}${card[0]}`.join(" "));
+  return cards.map((card) => `${card[1]}${card[0]}`).join(" ");
 }
 
 while (true) {
   prompt("Welcome to Twenty-One!");
-  prompt("Remeber to always play responsibly.");
+  prompt("Remember to always play responsibly.");
 
   let deck = initializeDeck();
   let playerHand = [];
