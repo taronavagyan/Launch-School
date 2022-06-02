@@ -180,4 +180,26 @@ while (true) {
       prompt(`You stayed at ${total(playerHand)}`);
     }
   }
+
+  // dealer turn
+  prompt("Dealer's turn...");
+
+  while (total(dealerHand) < 17) {
+    prompt("Dealer hits!");
+    dealerHand.push(deck.pop());
+    prompt(`Dealer's cards are now ${hand(dealerHand)}`);
+  }
+
+  if (busted(dealerHand)) {
+    prompt(`Dealer's total is now: ${total(dealerHand)}`);
+    displayResults(dealerHand, playerHand);
+
+    if (playAgain()) {
+      continue;
+    } else {
+      break;
+    }
+  } else {
+    prompt(`Dealer stayed at ${total(dealerHand)}`);
+  }
 }
