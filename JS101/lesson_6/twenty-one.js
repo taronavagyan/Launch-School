@@ -202,4 +202,16 @@ while (true) {
   } else {
     prompt(`Dealer stayed at ${total(dealerHand)}`);
   }
+
+  // both player and dealer stayed - compare cards!
+  console.log("==============");
+  prompt(
+    `Dealer has ${hand(dealerHand)}, for a total of: ${total(dealerHand)}`
+  );
+  prompt(`You have ${hand(playerHand)}, for a total of ${total(playerHand)}`);
+  console.log("==============");
+
+  displayResults(dealerHand, playerHand);
+
+  if (!playAgain()) break;
 }
