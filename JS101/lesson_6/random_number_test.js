@@ -1,3 +1,4 @@
+/*
 while (true) {
   let num = Math.floor(Math.random() * 10000000);
   console.log(num);
@@ -6,3 +7,7 @@ while (true) {
     break;
   }
 }
+*/
+
+let numbers = [1, 111, 1121, 113, 123434, 23, 12, 34];
+console.log(numbers.sort((a, b) => a - b));
