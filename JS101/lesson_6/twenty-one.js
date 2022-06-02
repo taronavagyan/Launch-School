@@ -141,11 +141,11 @@ while (true) {
   playerHand.push(...popTwoFromDeck(deck));
   dealerHand.push(...popTwoFromDeck(deck));
 
-  prompt(`Dealer has: ${dealerHand[0]} and an unknown card`);
+  prompt(`Dealer has: ${hand(dealerHand).split(" ")[0]} and an unknown card`);
   prompt(
-    `You have: ${playerHand[0]} and ${playerHand[1]}, for a total of ${total(
-      playerHand
-    )}.`
+    `You have: ${hand(playerHand)
+      .split(" ")
+      .join(" and ")}, for a total of ${total(playerHand)}.`
   );
 
   // player turn
