@@ -119,6 +119,7 @@ function playAgain() {
   console.log("-------------");
   prompt("Would you like to play again? (y/n)");
   let answer = readline.question();
+  console.clear();
   return answer.toLowerCase()[0] === "y";
 }
 
@@ -130,10 +131,10 @@ function hand(cards) {
   return cards.map((card) => `${card[1]}${card[0]}`).join(" ");
 }
 
+prompt("Welcome to Twenty-One!");
+prompt("Remember to always play responsibly.");
+console.log("--------------");
 while (true) {
-  prompt("Welcome to Twenty-One!");
-  prompt("Remember to always play responsibly.");
-
   let deck = initializeDeck();
   let playerHand = [];
   let dealerHand = [];
@@ -154,34 +155,34 @@ while (true) {
     while (true) {
       prompt("Would to like to (h)it or (s)tand?");
       playerTurn = readline.question().toLowerCase();
-      if (!["h", "s"].includes(playerTurn)) {
-        prompt("Sorry, you must enter 'h' or 's'.");
-      }
 
-      if (playerTurn === "h") {
-        playerHand.push(deck.pop());
-        prompt("You chose to hit!");
-        prompt(`Your cards are now: ${hand(playerHand)}`);
-        prompt(`Your total is now ${total(playerHand)}`);
-      }
-
-      if (playerTurn === "s" || busted(playerHand)) break;
+      if (["h", "s"].includes(playerTurn)) break;
+      prompt("Sorry, you must enter 'h' or 's'.");
+    }
+    if (playerTurn === "h") {
+      playerHand.push(deck.pop());
+      prompt("You chose to hit!");
+      prompt(`Your cards are now: ${hand(playerHand)}`);
+      prompt(`Your total is now ${total(playerHand)}`);
     }
 
-    if (busted(playerHand)) {
-      displayResults(dealerHand, playerHand);
-
-      if (playAgain()) {
-        continue;
-      } else {
-        break;
-      }
-    } else {
-      prompt(`You stayed at ${total(playerHand)}`);
+    if (playerTurn === "s" || busted(playerHand)) {
+      break;
     }
   }
 
+  if (busted(playerHand)) {
+    displayResults(dealerHand, playerHand);
+    if (playAgain()) {
+      continue;
+    } else {
+      break;
+    }
+  }
+  prompt(`You stayed at ${total(playerHand)}`);
+
   // dealer turn
+  console.log("");
   prompt("Dealer's turn...");
 
   while (total(dealerHand) < 17) {
