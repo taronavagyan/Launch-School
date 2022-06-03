@@ -203,20 +203,6 @@ const NUM_WORDS = {
   nine: 9,
 };
 
-function wordToDigit(sentence) {
-  Object.keys(NUM_WORDS).forEach((word) => {
-    let regex = new RegExp(word, "g");
-    sentence = sentence.replace(regex, NUM_WORDS[word]);
-  });
-
-  return sentence;
-}
-
-console.log(
-  wordToDigit("Please call me at five five five one two three four. Thanks.")
-);
-// "Please call me at 5 5 5 1 2 3 4. Thanks."
-*/
 
 // 6.
 
