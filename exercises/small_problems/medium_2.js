@@ -49,6 +49,7 @@ letterPercentages('123');
 // casePercentages[lowercase]
 
 // eslint-disable-next-line max-lines-per-function
+/*
 function letterPercentages(string) {
   let casePercentages = {};
   let lowercaseCount = 0;
@@ -90,3 +91,71 @@ letterPercentages("AbCd +Ef"); // 8 [3, 3, 2]
 
 letterPercentages("123"); // 3 [0, 0, 3]
 // { lowercase: "0.00", uppercase: "0.00", neither: "100.00" }
+*/
+
+// 2.
+
+// PROBLEM:
+
+// Given 3 numbers representing sides of a triangle
+// return isoceles, scalene, equilateral, or invalid
+// with the output representing the type of triangle the sides make
+
+/*
+Equilateral: All three sides are of equal length.
+Isosceles: Two sides are of equal length, while the third is different.
+Scalene: All three sides are of different lengths.
+Invalid: One of the 3 sides have a length of 0 or less OR the sum of the two
+         shortest sides are less or equal to than the length of the longest side
+*/
+
+// EXAMPLES:
+
+/*
+triangle(3, 3, 3);        // "equilateral"
+triangle(3, 3, 1.5);      // "isosceles"
+triangle(3, 4, 5);        // "scalene"
+triangle(0, 3, 3);        // "invalid"
+triangle(3, 1, 1);        // "invalid"
+*/
+
+// DATA STRUCTURE:
+
+// INPUT: Three numbers
+// OUTPUT: a string
+// In-between: Array
+
+// ALGORITHM:
+
+// GET three sides of the string
+// Initialize sides to an array containing the 3 lengths
+// Filter sides by ascending lengths
+// If sides contains a number less than 0, return "invalid"
+// If the first two lengths are less than or equal to the third length,
+//   return invalid
+// If the three sides are all equal, return equilateral
+// If two of the sides are equal, return isoceles
+// Else, return scalene
+
+// CODE:
+
+function triangle(side1, side2, side3) {
+  let sides = [side1, side2, side3];
+  sides.sort((a, b) => a - b);
+  if (sides.some((side) => side <= 0) || !(sides[0] + sides[1] > sides[2])) {
+    return "invalid";
+  }
+
+  if (sides.every((side) => side === sides[0])) return "equilateral";
+
+  if (side1 === side2 || side1 === side3 || side3 === side2) {
+    return "isoceles";
+  }
+  return "scalene";
+}
+
+console.log(triangle(3, 3, 3)); // "equilateral"
+console.log(triangle(3, 3, 1.5)); // "isosceles"
+console.log(triangle(3, 4, 5)); // "scalene"
+console.log(triangle(0, 3, 3)); // "invalid"
+console.log(triangle(3, 1, 1)); // "invalid"
