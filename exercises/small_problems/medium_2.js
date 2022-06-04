@@ -139,6 +139,7 @@ triangle(3, 1, 1);        // "invalid"
 
 // CODE:
 
+/*
 function triangle(side1, side2, side3) {
   let sides = [side1, side2, side3];
   sides.sort((a, b) => a - b);
@@ -159,3 +160,4 @@ console.log(triangle(3, 3, 1.5)); // "isosceles"
 console.log(triangle(3, 4, 5)); // "scalene"
 console.log(triangle(0, 3, 3)); // "invalid"
 console.log(triangle(3, 1, 1)); // "invalid"
+*/
