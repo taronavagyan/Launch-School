@@ -161,3 +161,64 @@ console.log(triangle(3, 4, 5)); // "scalene"
 console.log(triangle(0, 3, 3)); // "invalid"
 console.log(triangle(3, 1, 1)); // "invalid"
 */
+
+// 3.
+
+// PROBLEM:
+
+// Given 3 numbers representing angles,
+// Return 'invalid' if the sum of the angles is not 180
+//   or if any angle is less than or equal to 0
+// Return 'right' is one angle is 90
+// Return 'acute' is all angles are less than 90
+// Return 'obtusde' if one angle is greater than 90
+
+// EXAMPLES/ TEST CASES:
+
+/*
+triangle(60, 70, 50);       // "acute"
+triangle(30, 90, 60);       // "right"
+triangle(120, 50, 10);      // "obtuse"
+triangle(0, 90, 90);        // "invalid"
+triangle(50, 50, 50);       // "invalid"
+*/
+
+// DATA STRUCTURE:
+
+// Input: 3 numbers, always integers
+// Output: One string
+// Intermediary: Array (?)
+
+// ALGORITHM:
+
+// GET the three numbers
+// SET an array with the three numbers
+// If any angle is <= 0 or the sum of the angles is
+//   not 180, return 'invalid;
+// Return 'right' if any angle is 90
+// Return 'acute' if all angles are <90
+// Return 'obtuse' if any angle is >90
+
+// CODE:
+
+/*
+function triangle(angle1, angle2, angle3) {
+  let angles = [angle1, angle2, angle3];
+  if (
+    angles.some((angle) => angle <= 0) ||
+    angles.reduce((a, b) => a + b) !== 180
+  ) {
+    return "invalid";
+  }
+
+  if (angles.some((angle) => angle === 90)) return "right";
+  if (angles.every((angle) => angle < 90)) return "acute";
+  return "obtuse";
+}
+
+console.log(triangle(60, 70, 50)); // "acute"
+console.log(triangle(30, 90, 60)); // "right"
+console.log(triangle(120, 50, 10)); // "obtuse"
+console.log(triangle(0, 90, 90)); // "invalid"
+console.log(triangle(50, 50, 50)); // "invalid"
+*/
