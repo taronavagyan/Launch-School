@@ -222,3 +222,78 @@ console.log(triangle(120, 50, 10)); // "obtuse"
 console.log(triangle(0, 90, 90)); // "invalid"
 console.log(triangle(50, 50, 50)); // "invalid"
 */
+
+// 4.
+
+// PROBLEM:
+
+// Given a year after 1752,
+// Return a number representing how many Friday the 13ths
+//  there were in that calendar year
+
+// EXAMPLES/ TEST CASES:
+
+/*
+fridayThe13ths(1986);      // 1
+fridayThe13ths(2015);      // 3
+fridayThe13ths(2017);      // 2
+*/
+
+// DATA STRUCTURE:
+
+// Input: One number representing a year
+// Output: One number representing total Friday the 13ths
+// Intermediary: Date (?)
+
+// ALGORITHM:
+
+// Create an array with every month
+// GET a number representing the year
+// SET fridayTheThirteenCount to 0
+// For the 13th day of every month
+//   If the day of the week is Friday
+//     Increment fridayTheThirteenCount by 1
+// RETURN fridayTheThirteenCount
+
+// CODE:
+
+const MONTHS = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+const DAYS = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
+function fridayThe13ths(year) {
+  let fridayTheThirteenCount = 0;
+  for (let month of MONTHS) {
+    let date = new Date(`${month} 13, ${year}`);
+    let day = date.getDay();
+    if (DAYS[day] === "Friday") {
+      fridayTheThirteenCount += 1;
+    }
+  }
+  return fridayTheThirteenCount;
+}
+
+fridayThe13ths(1986); // 1
+fridayThe13ths(2015); // 3
+fridayThe13ths(2017); // 2
