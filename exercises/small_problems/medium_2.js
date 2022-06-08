@@ -257,6 +257,7 @@ fridayThe13ths(2017);      // 2
 
 // CODE:
 
+/*
 const MONTHS = [
   "January",
   "February",
@@ -297,3 +298,100 @@ function fridayThe13ths(year) {
 fridayThe13ths(1986); // 1
 fridayThe13ths(2015); // 3
 fridayThe13ths(2017); // 2
+*/
+
+// 5.
+
+// PROBLEM:
+
+// Given a number return the next greater featured number
+// Return an error message if there is no next featured number
+
+// A featured number:
+//  Is a multiple of 7
+//  Is odd
+//  Has all of its digits occuring exactly once
+// The largest featured number is 9876543201
+
+// EXAMPLES/ TEST CASES:
+
+/*
+featured(12);           // 21
+featured(20);           // 21
+featured(21);           // 35
+featured(997);          // 1029
+featured(1029);         // 1043
+featured(999999);       // 1023547
+featured(999999987);    // 1023456987
+featured(9876543186);   // 9876543201
+featured(9876543200);   // 9876543201
+featured(9876543201);
+// "There is no possible number that fulfills those requirements."
+*/
+
+// DATA STRUCTURE:
+
+// Input: One number
+// Output: One number or a string (error message)
+// Intermediary: Number
+
+// ALGORITHM:
+
+// GET the integer argument
+// If the number is greater than or equal to 9876543201
+//   return an error message
+// Else
+// Loop through the multiples of 7
+// If they are odd,
+//   Check if each digit occurs only once
+//     If so, return the number
+// Continue until a featured number is found
+
+// CODE:
+
+/*
+function isOdd(num) {
+  return num % 2 === 1;
+}
+
+function hasUniqueDigitsOnly(num) {
+  let chars = (num + "").split("");
+  let occurences = {};
+
+  chars.forEach((char) => {
+    if (!occurences[char]) {
+      occurences[char] = 0;
+    }
+    occurences[char] += 1;
+  });
+  return !Object.values(occurences).some((occurence) => occurence > 1);
+}
+function featured(int) {
+  if (int >= 9876543201) {
+    return "There is no possible number that fulfills those requirements.";
+  }
+  let featuredNum = 7;
+
+  while (featuredNum <= int) {
+    featuredNum += 7;
+  }
+
+  while (true) {
+    if (isOdd(featuredNum) && hasUniqueDigitsOnly(featuredNum)) {
+      return featuredNum;
+    }
+    featuredNum += 7;
+  }
+}
+
+featured(12); // 21
+featured(20); // 21
+featured(21); // 35
+featured(997); // 1029
+featured(1029); // 1043
+featured(999999); // 1023547
+featured(999999987); // 1023456987
+featured(9876543186); // 9876543201
+featured(9876543200); // 9876543201
+featured(9876543201);
+*/
