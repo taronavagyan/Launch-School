@@ -350,6 +350,8 @@ featured(9876543201);
 // CODE:
 
 /*
+
+const MAX_FEATURED = 9876543201;
 function isOdd(num) {
   return num % 2 === 1;
 }
@@ -367,7 +369,7 @@ function hasUniqueDigitsOnly(num) {
   return !Object.values(occurences).some((occurence) => occurence > 1);
 }
 function featured(int) {
-  if (int >= 9876543201) {
+  if (int >= MAX_FEATURED) {
     return "There is no possible number that fulfills those requirements.";
   }
   let featuredNum = 7;
@@ -394,4 +396,57 @@ featured(999999987); // 1023456987
 featured(9876543186); // 9876543201
 featured(9876543200); // 9876543201
 featured(9876543201);
+*/
+
+// 6.
+
+// PROBLEM:
+
+// Given a number representing the first [count] integers
+// Return the difference between the square of the sum
+//  of the first [count] numbers and the sum of the squares of
+//  the first [count] numbers
+
+// EXAMPLES/ TEST CASES:
+
+/*
+sumSquareDifference(3);      // 22 --> (1 + 2 + 3)**2 - (1**2 + 2**2 + 3**2)
+sumSquareDifference(10);     // 2640
+sumSquareDifference(1);      // 0
+sumSquareDifference(100);    // 25164150
+*/
+
+// DATA STRUCTURE:
+
+// Input: One Number (integer)
+// Output: One Number (integer)
+// Intermediary (?): Two numbers
+
+// ALGORITHM:
+
+// GET the number representing the first [count] integers starting from 1
+// Calculate the square of the sum of the first [count] integers
+//   Set the above value to squareOfSums
+// Calculate the sum of the square of the first [count] integers
+//   Set the above value to sumOfSquares
+// Subtract sumOfSquares from squareOfSums and return the difference
+
+// CODE:
+
+/*
+function sumSquareDifference(count) {
+  let firstCountIntegers = [];
+  for (let num = 1; num <= count; num += 1) {
+    firstCountIntegers.push(num);
+  }
+  let squareOfSums = firstCountIntegers.reduce((a, b) => a + b) ** 2;
+  //prettier-ignore
+  let sumOfSquares = firstCountIntegers.reduce((a, b) => a + (b ** 2));
+  return squareOfSums - sumOfSquares;
+}
+
+sumSquareDifference(3); // 22 --> (1 + 2 + 3)**2 - (1**2 + 2**2 + 3**2)
+sumSquareDifference(10); // 2640
+sumSquareDifference(1); // 0
+sumSquareDifference(100); // 25164150
 */
