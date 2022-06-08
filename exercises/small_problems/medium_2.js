@@ -510,9 +510,7 @@ function bubbleSort(items) {
     newItemsLength = 0;
     for (let idx = 1; idx <= itemsLength - 1; idx += 1) {
       if (items[idx - 1] > items[idx]) {
-        let holder = items[idx - 1];
-        items[idx - 1] = items[idx];
-        items[idx] = holder;
+        [items[idx - 1], items[idx]] = [items[idx], items[idx - 1]];
         newItemsLength = idx;
       }
     }
