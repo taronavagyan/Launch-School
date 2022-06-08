@@ -450,3 +450,87 @@ sumSquareDifference(10); // 2640
 sumSquareDifference(1); // 0
 sumSquareDifference(100); // 25164150
 */
+
+// 7.
+
+// PROBLEM:
+
+// Given an array with at least 2 elements
+// Make multiple passes through array
+// On each pass, compare the two values of
+// each pair of consecutive elements
+// If the first value is greater than the second,
+//   the two values are swapped
+// Continune until no more swaps
+
+// EXAMPLES/ TEST CASES:
+
+/*
+let array1 = [5, 3];
+bubbleSort(array1);
+console.log(array1);    // [3, 5]
+
+let array2 = [6, 2, 7, 1, 4];
+bubbleSort(array2);
+console.log(array2);    // [1, 2, 4, 6, 7]
+
+let array3 = ['Sue', 'Pete', 'Alice', 'Tyler', 'Rachel', 'Kim', 'Bonnie'];
+bubbleSort(array3);
+console.log(array3);
+// ["Alice", "Bonnie", "Kim", "Pete", "Rachel", "Sue", "Tyler"]
+*/
+
+// DATA STRUCTURE:
+
+// Input: Array
+// Output: Array
+// Intermediary (?): Array
+
+// ALGORITHM:
+
+// GET the array (items)
+// SET n to items length
+// REPEAT
+//   SET newN to 0
+//   for i = 1 to n - 1 inclusive
+//     if (Items[i-1]) > Items[i]
+//       Swap(items[i-1], items[i])
+//       newN = i
+//   SET n to newN
+// END repition when n is less than or equal to 1
+// RETURN items
+
+// CODE:
+
+/*
+function bubbleSort(items) {
+  let itemsLength = items.length;
+  let newItemsLength;
+  do {
+    newItemsLength = 0;
+    for (let idx = 1; idx <= itemsLength - 1; idx += 1) {
+      if (items[idx - 1] > items[idx]) {
+        let holder = items[idx - 1];
+        items[idx - 1] = items[idx];
+        items[idx] = holder;
+        newItemsLength = idx;
+      }
+    }
+    itemsLength = newItemsLength;
+  } while (itemsLength > 1);
+  return items;
+}
+
+let array1 = [5, 3];
+bubbleSort(array1);
+console.log(array1); // [3, 5]
+
+let array2 = [6, 2, 7, 1, 4];
+bubbleSort(array2);
+console.log(array2); // [1, 2, 4, 6, 7]
+
+let array3 = ["Sue", "Pete", "Alice", "Tyler", "Rachel", "Kim", "Bonnie"];
+bubbleSort(array3);
+console.log(array3);
+// ["Alice", "Bonnie", "Kim", "Pete", "Rachel", "Sue", "Tyler"]
+*/
