@@ -75,3 +75,45 @@ function reverseSentence(sentence) {
 console.log(reverseSentence("hello world"));
 console.log(reverseSentence("am i bear, a"));
 */
+
+// 6.
+
+/*
+function reverseWordsFiveOrLonger(sentence) {
+  return sentence
+    .split(" ")
+    .map((word) => {
+      if (word.length >= 5) {
+        return word.split("").reverse().join("");
+      }
+      return word;
+    })
+    .join(" ");
+}
+
+console.log(reverseWordsFiveOrLonger("Professional"));
+console.log(reverseWordsFiveOrLonger("Walk around the block"));
+console.log(reverseWordsFiveOrLonger("Launch school"));
+*/
+
+// 7.
+
+/*
+function stringy(num) {
+  let result = "";
+
+  for (let count = 0; count < num; count += 1) {
+    if (count % 2 === 0) {
+      result += "1";
+    } else {
+      result += "0";
+    }
+  }
+  return result;
+}
+
+console.log(stringy(6));
+console.log(stringy(9));
+console.log(stringy(4));
+console.log(stringy(7));
+*/
