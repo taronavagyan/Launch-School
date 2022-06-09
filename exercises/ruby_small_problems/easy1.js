@@ -117,3 +117,28 @@ console.log(stringy(9));
 console.log(stringy(4));
 console.log(stringy(7));
 */
+
+// 8.
+
+/*
+function average(arrayOfNums) {
+  return Math.floor(arrayOfNums.reduce((a, b) => a + b) / arrayOfNums.length);
+}
+
+console.log(average([1, 6]));
+console.log(average([1, 5, 87, 45, 8, 8]));
+console.log(average([9, 47, 23, 95, 16, 52]));
+*/
+
+// 9.
+
+/*
+function sum(number) {
+  return String(number)
+    .split("")
+    .reduce((a, b) => Number(a) + Number(b));
+}
+console.log(sum(23));
+console.log(sum(496));
+console.log(sum(123_456_789));
+*/
