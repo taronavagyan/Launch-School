@@ -142,3 +142,12 @@ console.log(sum(23));
 console.log(sum(496));
 console.log(sum(123_456_789));
 */
+
+// 10.
+
+/*
+function calculateBonus(amount, deserveBonus) {
+  return deserveBonus ? amount / 2 : 0;
+}
+console.log(calculateBonus(1000, true) === 500);
+*/
