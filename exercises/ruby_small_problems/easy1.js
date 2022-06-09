@@ -64,3 +64,14 @@ let vehicles = [
 
 console.log(countOccurrences(vehicles));
 */
+
+// 5.
+
+/*
+function reverseSentence(sentence) {
+  return sentence.split(" ").reverse().join(" ");
+}
+
+console.log(reverseSentence("hello world"));
+console.log(reverseSentence("am i bear, a"));
+*/
