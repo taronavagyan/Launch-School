@@ -34,3 +34,33 @@ function returnDigits(num = "") {
 console.log(returnDigits(51231));
 console.log(returnDigits());
 */
+
+// 4.
+
+/*
+function countOccurrences(items) {
+  let occurences = {};
+  items.forEach((item) => {
+    if (!occurences[item]) {
+      occurences[item] = 0;
+    }
+    occurences[item] += 1;
+  });
+  return occurences;
+}
+
+let vehicles = [
+  "car",
+  "car",
+  "truck",
+  "car",
+  "SUV",
+  "truck",
+  "motorcycle",
+  "motorcycle",
+  "car",
+  "truck",
+];
+
+console.log(countOccurrences(vehicles));
+*/
