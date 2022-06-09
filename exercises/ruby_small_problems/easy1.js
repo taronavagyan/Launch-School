@@ -21,3 +21,16 @@ console.log(absIsOdd(-5));
 console.log(absIsOdd(4));
 console.log(absIsOdd(0));
 */
+
+// 3.
+
+/*
+function returnDigits(num = "") {
+  return String(num)
+    .split("")
+    .map((digit) => Number(digit));
+}
+
+console.log(returnDigits(51231));
+console.log(returnDigits());
+*/
