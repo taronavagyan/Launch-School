@@ -44,3 +44,28 @@ let billWithTip = billAmount + tipAmount;
 
 console.log(`The tip is $${tipAmount} and the total bill is $${billWithTip}`);
 */
+
+// 4.
+
+// GET current age
+// GET retirement age
+// SET years until retirement to retirement age minus current age
+// GET current year
+// SET retirement age to current year + years until retirement
+// print
+
+/*
+const readline = require("readline-sync");
+
+let currentAge = readline.question("What is your age? ") * 1;
+let retirementAge =
+  readline.question("At what age would you like to retire? ") * 1;
+
+let yearsToRetirement = retirementAge - currentAge;
+let currentYear = new Date().getFullYear();
+
+let retirementYear = currentYear + yearsToRetirement;
+
+console.log(`It's ${currentYear}. You will retire in ${retirementYear}.`);
+console.log(`You only have ${yearsToRetirement} years of work to go!`);
+*/
