@@ -23,6 +23,24 @@ let squareMeters = (lengthInMeters * widthInMeters).toFixed(1);
 let squareFeet = (squareMeters * SQ_METERS_TO_SQ_FEET).toFixed(2);
 
 console.log(
-  `The area of the room is ${squareMeters} square meters (${squareFeet} square feet).`
+  `The area of the room is ${squareMeters} square meters (${squareFeet} square
+     feet).`
 );
+*/
+
+// 3.
+
+/*
+const readline = require("readline-sync");
+
+let billAmount = readline.question("What is the bill amount? ") * 1;
+
+let tipPercentage =
+  readline.question("What percentage tip would you like to give? ") / 100;
+
+let tipAmount = billAmount * tipPercentage;
+
+let billWithTip = billAmount + tipAmount;
+
+console.log(`The tip is $${tipAmount} and the total bill is $${billWithTip}`);
 */
