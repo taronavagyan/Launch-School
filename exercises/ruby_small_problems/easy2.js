@@ -77,6 +77,7 @@ console.log(`You only have ${yearsToRetirement} years of work to go!`);
 // if name!
 // greet in caps
 
+/*
 const readline = require("readline-sync");
 
 let name = readline.question("What is your name? ");
@@ -86,3 +87,10 @@ if (name.endsWith("!")) {
 } else {
   console.log(`Hello ${name}.`);
 }
+*/
+
+// 6.
+
+/*
+for (let num = 1; num <= 99; num += 2) console.log(num);
+*/
