@@ -69,3 +69,20 @@ let retirementYear = currentYear + yearsToRetirement;
 console.log(`It's ${currentYear}. You will retire in ${retirementYear}.`);
 console.log(`You only have ${yearsToRetirement} years of work to go!`);
 */
+
+// 5.
+
+// get name
+// greet name
+// if name!
+// greet in caps
+
+const readline = require("readline-sync");
+
+let name = readline.question("What is your name? ");
+
+if (name.endsWith("!")) {
+  console.log(`HELLO ${name.slice(0, -1)}. WHY ARE WE SCREAMING?`);
+} else {
+  console.log(`Hello ${name}.`);
+}
