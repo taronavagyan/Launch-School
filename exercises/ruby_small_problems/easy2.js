@@ -94,3 +94,53 @@ if (name.endsWith("!")) {
 /*
 for (let num = 1; num <= 99; num += 2) console.log(num);
 */
+
+// 7.
+
+/*
+const readline = require("readline-sync");
+
+function prompt(msg) {
+  console.log(`>> ${msg}`);
+}
+
+function calculateSumUntil(int) {
+  let sum = 0;
+  for (let count = 1; count <= int; count += 1) {
+    sum += count;
+  }
+  return sum;
+}
+
+function calculateProductUntil(int) {
+  let product = 1;
+  for (let count = 1; count <= int; count += 1) {
+    product *= count;
+  }
+  return product;
+}
+
+prompt("Please enter an integer greater than 0: ");
+
+let givenInt = readline.question();
+
+prompt("Enter 's' to compute the sum or 'p' to compute the product.");
+
+let command = readline.question().toLowerCase()[0];
+
+if (command === "s") {
+  console.log(
+    `The sum of the integers between one and ${givenInt} is ${calculateSumUntil(
+      givenInt
+    )}.`
+  );
+} else if (command === "p") {
+  console.log(
+    `The product of the integers between one and ${givenInt} is ${calculateProductUntil(
+      givenInt
+    )}.`
+  );
+} else {
+  console.log("Invalid input.");
+}
+*/
