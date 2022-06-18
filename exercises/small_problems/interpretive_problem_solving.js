@@ -65,3 +65,48 @@ function lightsOn(count) {
 console.log(lightsOn(5));
 console.log(lightsOn(100));
 */
+
+// 2.
+
+// PROBLEM:
+
+// Given a on integer
+// Print a diamond
+// Length of the diamond (lines) is equal to integer
+
+// EXAMPLES/ TEST CASES:
+
+/*
+diamond(1);
+// logs
+*
+
+diamond(3);
+// logs
+ *
+***
+ *
+
+diamond(9);
+// logs
+    *
+   ***
+  *****
+ *******
+*********
+ *******
+  *****
+   ***
+    *
+*/
+
+// DATA STRUCTURE:
+
+// Input: One odd integer
+// Output: Strings as diamond
+
+// ALGORITHM:
+
+// GET the number representing diamond size
+// Starting with 1,
+//

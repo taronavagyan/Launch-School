@@ -136,7 +136,8 @@ if (command === "s") {
   );
 } else if (command === "p") {
   console.log(
-    `The product of the integers between one and ${givenInt} is ${calculateProductUntil(
+    `The product of the integers between one and ${givenInt} is
+     ${calculateProductUntil(
       givenInt
     )}.`
   );
@@ -144,3 +145,5 @@ if (command === "s") {
   console.log("Invalid input.");
 }
 */
+
+// 8.
