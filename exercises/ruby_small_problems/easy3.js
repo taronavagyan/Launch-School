@@ -55,6 +55,7 @@ The number 18 does not appear in [25, 15, 20, 17, 23].
 
 // CODE:
 
+/*
 const readline = require("readline-sync");
 
 const numbers = [];
@@ -90,3 +91,59 @@ if (numbers.includes(sixthNum)) {
     `The number ${sixthNum} does not appear in [${numbers.join(", ")}].`
   );
 }
+*/
+
+// 2.
+
+// PROBLEM:
+
+// Prompt the user for two positive integers
+// Print the results of the following operations on them:
+// +, -, *, /, %, **
+
+// EXAMPLES/ TEST CASES:
+
+/*
+==> Enter the first number:
+23
+==> Enter the second number:
+17
+==> 23 + 17 = 40
+==> 23 - 17 = 6
+==> 23 * 17 = 391
+==> 23 / 17 = 1
+==> 23 % 17 = 6
+==> 23 ** 17 = 141050039560662968926103
+*/
+
+// DATA STRUCTURE:
+// Input: 2 numbers
+// Output: strings
+
+// ALGORITHM:
+// Prompt the user for first number
+// Store the first num
+// Prompt the user for second number
+// Store the second num
+// Do all operations and print results
+
+// CODE:
+
+const readline = require(`readline-sync`);
+
+function prompt(msg) {
+  console.log(`==> ${msg}`);
+}
+
+prompt("Enter the first number: ");
+let firstNum = Number(readline.question());
+
+prompt("Enter the second number: ");
+let secondNum = Number(readline.question());
+
+prompt(`${firstNum} + ${secondNum} = ${firstNum + secondNum}`);
+prompt(`${firstNum} - ${secondNum} = ${firstNum - secondNum}`);
+prompt(`${firstNum} * ${secondNum} = ${firstNum * secondNum}`);
+prompt(`${firstNum} / ${secondNum} = ${Math.floor(firstNum / secondNum)}`);
+prompt(`${firstNum} % ${secondNum} = ${firstNum % secondNum}`);
+prompt(`${firstNum} ** ${secondNum} = ${firstNum ** secondNum}`);
