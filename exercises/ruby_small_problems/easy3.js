@@ -129,6 +129,7 @@ if (numbers.includes(sixthNum)) {
 
 // CODE:
 
+/*
 const readline = require(`readline-sync`);
 
 function prompt(msg) {
@@ -147,3 +148,4 @@ prompt(`${firstNum} * ${secondNum} = ${firstNum * secondNum}`);
 prompt(`${firstNum} / ${secondNum} = ${Math.floor(firstNum / secondNum)}`);
 prompt(`${firstNum} % ${secondNum} = ${firstNum % secondNum}`);
 prompt(`${firstNum} ** ${secondNum} = ${firstNum ** secondNum}`);
+*/
