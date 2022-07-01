@@ -15,3 +15,5 @@ May 3, 2022: Finished Lesson 3 and almost done with Lesson 4.
 May 20, 2022: Finished Lesson 5.
 
 June 28, 2022: Finished JS109
+
+July 1, 2022: Began JS120
