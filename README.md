@@ -13,3 +13,5 @@ April 18, 2022: Finished Lessons 1 & 2 of JS101!
 May 3, 2022: Finished Lesson 3 and almost done with Lesson 4.
 
 May 20, 2022: Finished Lesson 5.
+
+June 28, 2022: Finished JS109
